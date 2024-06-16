@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="UpdateAppointment" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="10"/>
+        <Label Content="Update appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Content="Customer's name" HorizontalAlignment="Left" Margin="133,96,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Notes" HorizontalAlignment="Left" Margin="133,144,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Is checked up" HorizontalAlignment="Left" Margin="133,191,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Is cancelled" HorizontalAlignment="Left" Margin="133,240,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label Content="Doctor ID" HorizontalAlignment="Left" Margin="133,288,0,0" VerticalAlignment="Top" Width="104"/>
+        <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Margin="261,96,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176" Height="34" TextBoxBase.TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Margin="261,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176" Height="34"/>
+        <ComboBox Name="cbbIsCheckedUp" HorizontalAlignment="Left" Margin="261,193,0,0" VerticalAlignment="Top" Width="176" Height="34">
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+        </ComboBox>
+        <ComboBox Name="cbbIsCancelled" HorizontalAlignment="Left" Margin="261,242,0,0" VerticalAlignment="Top" Width="176" Height="34">
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+        </ComboBox>
+        <ComboBox Name="cbbDoctorId" HorizontalAlignment="Left" Margin="261,290,0,0" VerticalAlignment="Top" Width="176" Height="34">
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+        </ComboBox>
+        <Button x:Name="btnBackPage" Content="Back" HorizontalAlignment="Left" Margin="549,240,0,0" VerticalAlignment="Top" Height="84" Width="196" FontSize="20" FontWeight="Bold" Click="btnBackPage_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="549,96,0,0" VerticalAlignment="Top" Height="82" Width="196" FontSize="20" FontWeight="Bold" Click="btnSave_Click"/>
+
     </Grid>
 </Window>

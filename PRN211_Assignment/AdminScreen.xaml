@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9"/>
+        <DataGrid x:Name="dtgCusRequest" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,91,378,178" SelectionChanged="dtgCusRequest_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Fullname" Binding="{Binding Name}"/>
+                <DataGridTemplateColumn Header="Create appointment">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnCreateAppointment" Content="Create" Click="Button_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Customers' Request" HorizontalAlignment="Left" Margin="159,60,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="btnShowAcceptedRequest" Content="Show accepted request" HorizontalAlignment="Left" Margin="512,91,0,0" VerticalAlignment="Top" Height="165" Width="246" Click="btnShowAcceptedRequest_Click"/>
+
     </Grid>
 </Window>

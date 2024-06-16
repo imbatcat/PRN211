@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="AcceptedAppointment" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid x:Name="dtgAccepted" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="26,70,58,185">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
+                <DataGridTextColumn Header="Note" Binding="{Binding Notes}"/>
+                <DataGridTextColumn Header="Created date" Binding="{Binding DateCreated}"/>
+                <DataGridTextColumn Header="Updated date" Binding="{Binding DateUpdated}"/>
+                <DataGridTextColumn Header="Is Checked Up" Binding="{Binding IsCheckedUp}"/>
+                <DataGridTextColumn Header="IsCancelled" Binding="{Binding IsCancelled}"/>
+                <DataGridTextColumn Header="Doctor ID" Binding="{Binding DoctorId}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Accepted appointment" HorizontalAlignment="Left" Margin="314,39,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic"/>
+        <Button x:Name="btnBackPage" Content="Back" HorizontalAlignment="Left" Margin="182,302,0,0" VerticalAlignment="Top" Height="86" Width="166" ButtonBase.Click="btnBackPage_Click"/>
+        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="427,302,0,0" VerticalAlignment="Top" Height="86" Width="169" Click="Button_Click"/>
+
     </Grid>
 </Window>
