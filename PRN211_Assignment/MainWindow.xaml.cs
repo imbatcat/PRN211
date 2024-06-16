@@ -30,13 +30,14 @@ namespace PRN211_Assignment
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // viết điều kiện trước (sau khi register thành công thì hiện notification succesfully)
-            //if (true)
-            //{
-            var notificationWindow = new Notification();
-            notificationWindow.Owner = Application.Current.MainWindow; // Optional: Set owner to main window
-            notificationWindow.ShowDialog();
-            //}
+            //// viết điều kiện trước (sau khi register thành công thì hiện notification succesfully)
+            ////if (true)
+            ////{
+            //var notificationWindow = new Notification();
+            //notificationWindow.Owner = Application.Current.MainWindow; // Optional: Set owner to main window
+            //notificationWindow.ShowDialog();
+            ////}
+            MessageBox.Show("Register appointment Succesfully !!!","caption",MessageBoxButton.OK,MessageBoxImage.Information);
 
         }
 

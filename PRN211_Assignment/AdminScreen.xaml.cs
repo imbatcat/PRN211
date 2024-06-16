@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace PRN211_Assignment
 {
     /// <summary>
-    /// Interaction logic for Notification.xaml
+    /// Interaction logic for AdminScreen.xaml
     /// </summary>
-    public partial class Notification : Window
+    public partial class AdminScreen : Window
     {
-        public Notification()
+        public AdminScreen()
         {
             InitializeComponent();
-        }
-
-        private void OKButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }
