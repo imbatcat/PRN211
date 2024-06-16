@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{C58F6C24-9C9A-44DF-98DD-7D9DE429A9B2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "PRN211_Assignment\Application.csproj", "{0944A38D-5719-4957-9D5F-313FC94515F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PRN211_Assignment", "PRN211_Assignment\PRN211_Assignment.csproj", "{0944A38D-5719-4957-9D5F-313FC94515F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{B5A0A22D-1BB7-4F27-9889-7E4EC0DC2F1B}"
 EndProject

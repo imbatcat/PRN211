@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Label Content="Register for appointment" HorizontalAlignment="Left" Margin="268,44,0,0" VerticalAlignment="Top" Width="223" FontWeight="Bold" FontStyle="Italic" FontSize="18"/>
+        <Label Content="Enter your Fullname for registering an appointment" HorizontalAlignment="Left" Margin="232,129,0,0" VerticalAlignment="Top" Width="296"/>
+        <TextBox x:Name="txtFullname" HorizontalAlignment="Left" Margin="232,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="280" Height="57" TextChanged="txtUser_TextChanged"/>
+        <Button x:Name="btnDocLogin" Content="Login for doctor or admin"  HorizontalAlignment="Left" Margin="620,353,0,0" VerticalAlignment="Top" Height="67" Width="156" FontWeight="Bold" Click="btnDocLogin_Click"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="295,280,0,0" VerticalAlignment="Top" Height="65" Width="154" FontWeight="Bold" Click="Button_Click"/>
+        <Label HorizontalAlignment="Left" Margin="115,280,0,0" VerticalAlignment="Top" Width="181" Height="51"/>
+        
     </Grid>
 </Window>

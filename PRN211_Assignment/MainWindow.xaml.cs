@@ -20,5 +20,31 @@ namespace PRN211_Assignment
         {
             InitializeComponent();
         }
+
+        private void btnDocLogin_Click(object sender, RoutedEventArgs e)
+        {
+            LoginForDocNAdmin Window = new LoginForDocNAdmin();
+            Window.Show();
+            this.Close();
+        }
+
+        private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // viết điều kiện trước (sau khi register thành công thì hiện notification succesfully)
+            //if (true)
+            //{
+                var notificationWindow = new Notification();
+                notificationWindow.Owner = Application.Current.MainWindow; // Optional: Set owner to main window
+                notificationWindow.ShowDialog();
+            //}
+            
+        }
+
+        
     }
 }
