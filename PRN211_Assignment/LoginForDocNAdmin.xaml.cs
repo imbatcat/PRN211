@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core;
+using Repositories.Repos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +21,7 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class LoginForDocNAdmin : Window
     {
+        private readonly AccountRepository accountRepository = new AccountRepository();
         public LoginForDocNAdmin()
         {
             InitializeComponent();
@@ -26,7 +29,30 @@ namespace PRN211_Assignment
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-
+            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Please enter username and password", "Error!");
+                return;
+            }
+            var acc = accountRepository.Login(txtUser.Text, txtPassword.Text);
+            if (acc != null)
+            {
+                switch (acc.Discrimator)
+                {
+                    case "Doctor":
+                        //doctor window
+                        break;
+                    case "Admin":
+                        //admin window
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wrong username or password", "Error!");
+            }
         }
 
         private void btnBackPage_Click(object sender, RoutedEventArgs e)
