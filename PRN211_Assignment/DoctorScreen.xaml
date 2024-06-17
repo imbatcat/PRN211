@@ -1,29 +1,32 @@
-﻿<Window x:Class="PRN211_Assignment.AcceptedAppointment"
+﻿<Window x:Class="PRN211_Assignment.DoctorScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="AcceptedAppointment" Height="450" Width="800">
+        Title="DoctorScreen" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtgAccepted" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="26,70,58,185">
+        <Label Content="Doctor Screen" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,44,10,173" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Notes}"/>
                 <DataGridTextColumn Header="Created date" Binding="{Binding DateCreated}"/>
                 <DataGridTextColumn Header="Updated date" Binding="{Binding DateUpdated}"/>
-                <DataGridTextColumn Header="Is Checked Up" Binding="{Binding IsCheckedUp}"/>
+                <DataGridTemplateColumn Header="IsDisabled">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="IsCancelled" Binding="{Binding IsCancelled}"/>
                 <DataGridTextColumn Header="Doctor ID" Binding="{Binding DoctorId}"/>
 
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Accepted appointment" HorizontalAlignment="Left" Margin="314,39,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
-        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic"/>
-        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="259,316,0,0" VerticalAlignment="Top" Height="58" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic"/>
-        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="542,302,0,0" VerticalAlignment="Top" Height="86" Width="169" Click="Button_Click" FontStyle="Italic"/>
-
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="302,313,0,0" VerticalAlignment="Top" Height="47" Width="149" FontStyle="Italic" Click="btnSave_Click"/>
     </Grid>
 </Window>

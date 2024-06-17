@@ -33,13 +33,6 @@ namespace PRN211_Assignment
             //}
         }
 
-        private void btnBackPage_Click(object sender, object e)
-        {
-            AdminScreen ad = new AdminScreen();
-            ad.Show();
-            ad.Close();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //UpdateAppointment CreateWindow = new UpdateAppointment();
@@ -57,6 +50,13 @@ namespace PRN211_Assignment
             //    var listRe = dbcontext.Appointment.ToList();
             //    dtgAccepted.ItemsSource = listRe;
             //}
+        }
+
+        private void btnBackPage_Click(object sender, RoutedEventArgs e)
+        {
+            AdminScreen ad = new AdminScreen();
+            ad.Show();
+            ad.Close();
         }
     }
 }

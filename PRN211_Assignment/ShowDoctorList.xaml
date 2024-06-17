@@ -1,0 +1,41 @@
+﻿<Window x:Class="PRN211_Assignment.ShowDoctorList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN211_Assignment"
+        mc:Ignorable="d"
+        Title="ShowDoctorList" Height="450" Width="800">
+    <Grid>
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic"/>
+        <Label Content="Show doctor list" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <DataGrid x:Name="dtgDocList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="18,64,24,203" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding username}"/>
+                <DataGridTextColumn Header="Password" Binding="{Binding password}"/>
+                <DataGridTextColumn Header="Fullname" Binding="{Binding Fullname}"/>
+                <DataGridTextColumn Header="Date of birth" Binding="{Binding dateOfBirth}"/>
+                <DataGridTextColumn Header="Discriminator" Binding="{Binding discriminator}"/>
+                <DataGridTextColumn Header="Gender" Binding="{Binding gender}"/>
+                <DataGridTextColumn Header="Department" Binding="{Binding department}"/>
+                <DataGridTextColumn Header="Join date" Binding="{Binding joinDate}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
+                <DataGridTextColumn Header="Working" Binding="{Binding isDisabled}"/>
+                <DataGridTemplateColumn Header="Action">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnDeleteDoctor" Content="Delete" Click="Button_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="596,287,0,0" VerticalAlignment="Top" Height="41" Width="120" FontStyle="Italic" Click="btnUpdate_Click"/>
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="596,348,0,0" VerticalAlignment="Top" Height="40" Width="120" FontStyle="Italic" Click="btnCreate_Click"/>
+        <Button x:Name="btnShowRequest" Content="Show waiting request" HorizontalAlignment="Left" Margin="58,323,0,0" VerticalAlignment="Top" Height="80" Width="146" Click="Button_Click" FontStyle="Italic"/>
+        <Button x:Name="btnShowAppointment" Content="Show accepted appointment" HorizontalAlignment="Left" Margin="245,323,0,0" VerticalAlignment="Top" Height="81" Width="163" Click="btnShowAppointment_Click" FontStyle="Italic"/>
+
+    </Grid>
+</Window>

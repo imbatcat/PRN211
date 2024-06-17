@@ -24,7 +24,7 @@
         </ComboBox>
         <Label Content="Doctor id" HorizontalAlignment="Left" Margin="110,292,0,0" VerticalAlignment="Top"/>
         <ComboBox Name="cbbDoctorId" HorizontalAlignment="Left" Margin="236,292,0,0" VerticalAlignment="Top" Width="206" Height="26"/>
-        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="546,82,0,0" VerticalAlignment="Top" Height="236" Width="192" Click="btnCreate_Click"/>
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="546,82,0,0" VerticalAlignment="Top" Height="236" Width="192" Click="btnCreate_Click" FontStyle="Italic"/>
         <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Margin="236,89,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="206" Height="31"/>
 
     </Grid>

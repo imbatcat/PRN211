@@ -8,7 +8,7 @@
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9"/>
-        <DataGrid x:Name="dtgCusRequest" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,91,378,178" SelectionChanged="dtgCusRequest_SelectionChanged">
+        <DataGrid x:Name="dtgCusRequest" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="180,91,68,178" SelectionChanged="dtgCusRequest_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fullname" Binding="{Binding Name}"/>
                 <DataGridTemplateColumn Header="Create appointment">
@@ -20,8 +20,13 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Customers' Request" HorizontalAlignment="Left" Margin="159,60,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnShowAcceptedRequest" Content="Show accepted request" HorizontalAlignment="Left" Margin="512,91,0,0" VerticalAlignment="Top" Height="165" Width="246" Click="btnShowAcceptedRequest_Click"/>
+        <Label Content="Customers' Request" HorizontalAlignment="Left" Margin="324,60,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="btnShowAcceptedRequest"  HorizontalAlignment="Left" Margin="466,298,0,0" VerticalAlignment="Top" Height="93" Width="183" Click="btnShowAcceptedRequest_Click" FontStyle="Italic">
+            <StackPanel>
+                <TextBlock Text="Show accepted request" TextWrapping="Wrap"/>
+                <TextBlock Text="(Accepted appointment)" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Button>
 
     </Grid>
 </Window>

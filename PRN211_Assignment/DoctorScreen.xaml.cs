@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace PRN211_Assignment
+{
+    /// <summary>
+    /// Interaction logic for DoctorScreen.xaml
+    /// </summary>
+    public partial class DoctorScreen : Window
+    {
+        public DoctorScreen()
+        {
+            InitializeComponent();
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            //CheckBox checkBox = sender as CheckBox;
+            //Item selectedItem = checkBox.DataContext as Item;
+            //if (selectedItem != null)
+            //{
+            //    bool isChecked = checkBox.IsChecked ?? false;
+            //}
+        }
+    }
+}

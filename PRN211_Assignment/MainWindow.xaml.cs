@@ -32,10 +32,10 @@ namespace PRN211_Assignment
         {
            
 
-            //if (true)
+            //if (true)     if db + 1 row
             //{
-                MessageBox.Show("Register appointment Succesfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Warning);
-            //} else MessageBox.Show("Register appointment Succesfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Register appointment Succesfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Information);
+            //} else MessageBox.Show("Register appointment Succesfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Warning);
 
         }
 
