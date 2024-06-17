@@ -29,7 +29,6 @@ namespace PRN211_Assignment
 
             //đoạn này là lấy cái fullname bên AdminScreen gán vào cái lblCusName luôn
 
-
             //cần lấy data cho duy nhất 1 combobox là DoctorId
             //using (var context = new db())
             //{
@@ -59,7 +58,8 @@ namespace PRN211_Assignment
                     if (selectedValue.Equals("Yes"))
                     {
                         check = true;
-                    } else check = false;
+                    }
+                    else check = false;
                 }
 
                 if (cbbIsCancelled.SelectedItem != null)

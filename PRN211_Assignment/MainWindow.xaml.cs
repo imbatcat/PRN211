@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Repositories.Repos;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -25,16 +26,15 @@ namespace PRN211_Assignment
         {
             LoginForDocNAdmin Window = new LoginForDocNAdmin();
             Window.Show();
-            this.Close();
+            Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
 
             //if (true)     if db + 1 row
             //{
-                MessageBox.Show("Register appointment Succesfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Register appointment Succesfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Information);
             //} else MessageBox.Show("Register appointment Succesfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Warning);
 
         }

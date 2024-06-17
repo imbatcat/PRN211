@@ -11,7 +11,7 @@
         <Label Content="Enter your Fullname for registering an appointment" HorizontalAlignment="Left" Margin="232,129,0,0" VerticalAlignment="Top" Width="296"/>
         <TextBox x:Name="txtFullname" HorizontalAlignment="Left" Margin="232,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="280" Height="29"/>
         <Button x:Name="btnDocLogin" Content="Login for doctor or admin"  HorizontalAlignment="Left" Margin="620,369,0,0" VerticalAlignment="Top" Height="51" Width="156" FontWeight="Bold" Click="btnDocLogin_Click"/>
-        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="295,240,0,0" VerticalAlignment="Top" Height="66" Width="154" FontWeight="Bold" Click="Button_Click"/>
+        <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Left" Margin="295,233,0,0" VerticalAlignment="Top" Height="47" Width="154" FontWeight="Bold" Click="Button_Click"/>
         <Label HorizontalAlignment="Left" Margin="115,280,0,0" VerticalAlignment="Top" Width="181" Height="51"/>
 
     </Grid>

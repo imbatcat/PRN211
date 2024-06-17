@@ -1,5 +1,4 @@
-﻿using Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +20,6 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class AdminScreen : System.Windows.Window
     {
-
-        private List<Appointment> app = new List<Appointment>();
-
         public AdminScreen()
         {
             InitializeComponent();

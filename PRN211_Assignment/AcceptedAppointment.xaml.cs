@@ -56,7 +56,7 @@ namespace PRN211_Assignment
         {
             AdminScreen ad = new AdminScreen();
             ad.Show();
-            ad.Close();
+            Close();
         }
     }
 }

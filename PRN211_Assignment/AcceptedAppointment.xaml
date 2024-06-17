@@ -23,7 +23,7 @@
         <Label Content="Accepted appointment" HorizontalAlignment="Left" Margin="314,39,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic"/>
         <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="259,316,0,0" VerticalAlignment="Top" Height="58" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic"/>
-        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="542,302,0,0" VerticalAlignment="Top" Height="86" Width="169" Click="Button_Click" FontStyle="Italic"/>
+        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="542,316,0,0" VerticalAlignment="Top" Height="58" Width="169" Click="Button_Click" FontStyle="Italic"/>
 
     </Grid>
 </Window>

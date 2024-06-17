@@ -26,8 +26,7 @@ namespace Entities
         public bool IsCancelled { get; set; } = false;
 
         // Reference entity
-        [ForeignKey(nameof(DoctorId))]
-        public string DoctorId { get; set; }
+        public Guid AccountId { get; set; }
         public Account Account { get; set; }
     }
 }
