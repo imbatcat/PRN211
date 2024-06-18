@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Core;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,18 +20,37 @@ namespace PRN211_Assignment
     /// <summary>
     /// Interaction logic for AdminScreen.xaml
     /// </summary>
-    public partial class AdminScreen : System.Windows.Window
+    public partial class AdminScreen : System.Windows.Window, INotifyPropertyChanged
     {
+        private AcceptedAppointmentList _list;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public AcceptedAppointmentList List
+        {
+            get { return _list; }
+            set
+            {
+                _list = value;
+                OnPropertyChanged(nameof(List));
+            }
+        }
         public AdminScreen()
         {
+            DataContext = this;
             InitializeComponent();
+            List = new AcceptedAppointmentList();
+        }
 
-            //show customer request ngay khi login thành công vào Admin Screen
-            //using (var dbcontext = new db())
-            //{
-            //    var listRequest = dbcontext.Request.ToList();
-            //    dtgCusRequest.ItemsSource = listRequest;
-            //}
+        public AdminScreen(List<AcceptedAppointmentDTO> list)
+        {
+            DataContext = this;
+            InitializeComponent();
+            List = new AcceptedAppointmentList();
+            foreach (var items in list)
+            {
+                List.AddAppointment(items);
+            }
         }
 
         private void dtgCusRequest_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -62,6 +83,23 @@ namespace PRN211_Assignment
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            List<AcceptedAppointmentDTO> list = [];
+            foreach (var item in _list)
+            {
+                list.Add(item);
+            }
+            MainWindow mainWindow = new MainWindow(list);
+            mainWindow.Show();
+            Close();
         }
     }
 }
