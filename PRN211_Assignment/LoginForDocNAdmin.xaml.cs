@@ -22,9 +22,11 @@ namespace PRN211_Assignment
     public partial class LoginForDocNAdmin : Window
     {
         private readonly AccountRepository accountRepository = new AccountRepository();
-        public LoginForDocNAdmin()
+        public List<AcceptedAppointmentDTO> _list { get; set; }
+        public LoginForDocNAdmin(List<AcceptedAppointmentDTO> list)
         {
             InitializeComponent();
+            _list = list;
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -43,8 +45,10 @@ namespace PRN211_Assignment
                         //doctor window
                         break;
                     case "Admin":
-                        AdminScreen adminScreen = new AdminScreen();
-                        adminScreen.Show();
+                        AcceptedAppointment Window = new AcceptedAppointment(_list);
+                        Window.Show();
+                        Close();
+                        //admin window
                         break;
                     default:
                         break;

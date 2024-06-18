@@ -15,7 +15,6 @@ namespace Entities
 
         public DateOnly DateCreated { get; set; }
 
-
         public string Notes { get; set; }
 
         public string CustomerName { get; set; }
@@ -25,8 +24,7 @@ namespace Entities
         public bool IsCancelled { get; set; } = false;
 
         // Reference entity
-        [ForeignKey(nameof(DoctorId))]
-        public string DoctorId { get; set; }
+        public Guid AccountId { get; set; }
         public Account Account { get; set; }
     }
 }

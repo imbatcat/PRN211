@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="DoctorScreen" Height="450" Width="800">
     <Grid>
-        <Label Content="Doctor Screen" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,44,10,173" SelectionChanged="DataGrid_SelectionChanged">
+        <Label Content="Doctor Screen" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FF5B5B5B"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,44,27,173" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
@@ -27,6 +27,6 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="302,313,0,0" VerticalAlignment="Top" Height="47" Width="149" FontStyle="Italic" Click="btnSave_Click"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="601,345,0,0" VerticalAlignment="Top" Height="56" Width="172" FontStyle="Italic" Click="btnSave_Click" Background="#FF006EC9" Foreground="White" FontSize="16" BorderBrush="White"/>
     </Grid>
 </Window>
