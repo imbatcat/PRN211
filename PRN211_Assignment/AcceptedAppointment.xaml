@@ -1,4 +1,4 @@
-﻿<Window x:Class="PRN211_Assignment.AcceptedAppointment"
+<Window x:Class="PRN211_Assignment.AcceptedAppointment"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,17 +6,18 @@
         mc:Ignorable="d"
         Title="AcceptedAppointment" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtgAccepted" ItemsSource="{Binding List}"  Margin="26,70,540,185">
+        <DataGrid x:Name="dtgAccepted" ItemsSource="{Binding List}"  Margin="26,70,418,185">
             <!--<DataGrid.Columns>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Created date" Binding="{Binding DateCreated}"/>
             </DataGrid.Columns>-->
         </DataGrid>
         <Label Content="Accepted appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="212" FontWeight="Bold" Height="43" FontSize="18" Foreground="#FF7E7E7E"/>
-        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic"/>
-        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="259,324,0,0" VerticalAlignment="Top" Height="37" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic"/>
-        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="536,324,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click" FontStyle="Italic"/>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click"/>
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic" Foreground="Red"/>
+        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="365,323,0,0" VerticalAlignment="Top" Height="37" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic" BorderBrush="White" Background="#FF006EC9" Foreground="White"/>
+        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="542,114,0,0" VerticalAlignment="Top" Height="81" Width="141" Click="Button_Click" FontStyle="Italic" Foreground="Black" BorderBrush="White" Background="LightSteelBlue"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Background="#FFE74C3C" FontStyle="Italic" Foreground="White" BorderBrush="White"/>
+        <Button x:Name="btnBackPage_Copy" Content="Show waiting request " HorizontalAlignment="Left" Margin="542,323,0,0" VerticalAlignment="Top" Height="37" Width="141" Click="btnBackPage_Click" FontStyle="Italic" BorderBrush="White" Background="#FF006EC9" Foreground="White"/>
 
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
 ﻿using Core;
+using Entities;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +24,8 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class AdminScreen : System.Windows.Window, INotifyPropertyChanged
     {
+        private Appointment _appointment = new Appointment();
+
         private AcceptedAppointmentList _list;
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -76,7 +80,7 @@ namespace PRN211_Assignment
         {
             AcceptedAppointment app = new AcceptedAppointment();
             app.Show();
-            app.Close();
+            Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -101,17 +105,53 @@ namespace PRN211_Assignment
             Close();
         }
 
-        private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
+        private void btnCreateAppointment_Click(object sender, RoutedEventArgs e)
         {
-            AcceptedAppointment acceptedAppointment = new AcceptedAppointment();
-            acceptedAppointment.Show();
-            Close();
+            if (_appointment != null)
+            {
+                var cus = txtCusName.Text;
+                if (string.IsNullOrWhiteSpace(cus))
+                {
+                    MessageBox.Show("Customer's name cannot be empty.");
+                    return;
+                }
+                var note = txtNote.Text;
+                
+
+                //if (cbbIsCheckedUp.SelectedItem != null)
+                //{
+                //    string selectedValue = cbbIsCheckedUp.SelectedItem.ToString();
+                //    if (selectedValue.Equals("Yes"))
+                //    {
+                //        check = true;
+                //    }
+                //    else check = false;
+                //}
+
+                //if (cbbIsCancelled.SelectedItem != null)
+                //{
+                //    string selectedValue = cbbIsCancelled.SelectedItem.ToString();
+                //    if (selectedValue.Equals("Yes"))
+                //    {
+                //        cancel = true;
+                //    }
+                //    else cancel = false;
+                //}
+
+                _appointment.DateCreated = DateOnly.FromDateTime(DateTime.Now);
+                _appointment.CustomerName = cus;
+                _appointment.Notes = note;
+
+                DialogResult = true;
+                this.Tag = _appointment;
+                Close();
+            }
         }
 
-        private void btn_showDocList_Click(object sender, RoutedEventArgs e)
+        private void btnShowDoctorList(object sender, RoutedEventArgs e)
         {
-            ShowDoctorList showDoctorList = new ShowDoctorList();
-            showDoctorList.Show();
+            ShowDoctorList mainWindow = new ShowDoctorList();
+            mainWindow.Show();
             Close();
         }
     }

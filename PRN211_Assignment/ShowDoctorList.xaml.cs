@@ -29,14 +29,14 @@ namespace PRN211_Assignment
         {
             AdminScreen ad = new AdminScreen();
             ad.Show();
-            ad.Close();
+            Close();
         }
 
         private void btnShowAppointment_Click(object sender, RoutedEventArgs e)
         {
             AcceptedAppointment ad = new AcceptedAppointment();
             ad.Show();
-            ad.Close();
+            Close();
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
