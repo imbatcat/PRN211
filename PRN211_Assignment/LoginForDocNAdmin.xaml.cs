@@ -43,7 +43,8 @@ namespace PRN211_Assignment
                         //doctor window
                         break;
                     case "Admin":
-                        //admin window
+                        AdminScreen adminScreen = new AdminScreen();
+                        adminScreen.Show();
                         break;
                     default:
                         break;

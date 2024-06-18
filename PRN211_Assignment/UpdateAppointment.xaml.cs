@@ -75,7 +75,6 @@ namespace PRN211_Assignment
                     }
                     else cancel = false;
                 }
-                _appointment.DateUpdated = DateOnly.FromDateTime(DateTime.Now);
                 _appointment.CustomerName = cus;
                 _appointment.Notes = note;
                 _appointment.IsCheckedUp = check;
