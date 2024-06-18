@@ -35,7 +35,7 @@ namespace PRN211_Assignment
             {
                 _list = value;
                 OnPropertyChanged(nameof(List));
-                DataContext = this;
+                //DataContext = this;
 
             }
         }

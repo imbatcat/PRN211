@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
         Title="AcceptedAppointment" Height="450" Width="800">
-    <Grid >
+    <Grid>
         <DataGrid x:Name="dtgAccepted" ItemsSource="{Binding List}"  Margin="26,70,540,185">
             <!--<DataGrid.Columns>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>

@@ -31,6 +31,7 @@ namespace PRN211_Assignment
         {
             InitializeComponent();
             _list = list;
+            DataContext = this;
         }
 
         private void btnDocLogin_Click(object sender, RoutedEventArgs e)

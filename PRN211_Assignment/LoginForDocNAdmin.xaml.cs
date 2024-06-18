@@ -45,7 +45,7 @@ namespace PRN211_Assignment
                         //doctor window
                         break;
                     case "Admin":
-                        AcceptedAppointment Window = new AcceptedAppointment(_list);
+                        AdminScreen Window = new AdminScreen(_list);
                         Window.Show();
                         Close();
                         //admin window
