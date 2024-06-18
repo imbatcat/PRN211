@@ -21,7 +21,7 @@ namespace Repositories
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=MEOMATLON\SQLEXPRESS;uid=sa;pwd=MukuroHoshimiya;database=PRN211HospitalApp;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer(@"Server=LAPTOP-8QVR89KA\SQLEXPRESS02;uid=sa;pwd=12345;database=PRN211HospitalApp;TrustServerCertificate=True");
         }
     }
 }

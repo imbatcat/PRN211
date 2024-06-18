@@ -23,7 +23,6 @@ namespace PRN211_Assignment
     public partial class AdminScreen : System.Windows.Window, INotifyPropertyChanged
     {
         private AcceptedAppointmentList _list;
-
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public AcceptedAppointmentList List
@@ -99,6 +98,20 @@ namespace PRN211_Assignment
             }
             MainWindow mainWindow = new MainWindow(list);
             mainWindow.Show();
+            Close();
+        }
+
+        private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
+        {
+            AcceptedAppointment acceptedAppointment = new AcceptedAppointment();
+            acceptedAppointment.Show();
+            Close();
+        }
+
+        private void btn_showDocList_Click(object sender, RoutedEventArgs e)
+        {
+            ShowDoctorList showDoctorList = new ShowDoctorList();
+            showDoctorList.Show();
             Close();
         }
     }

@@ -8,7 +8,7 @@
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
-        <DataGrid x:Name="dtgCusRequest" Margin="89,104,73,165" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True">
+        <DataGrid x:Name="dtgCusRequest" Margin="269,104,73,165" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True">
             <DataGrid.Columns>
                 <!--<DataGridTextColumn Header="Fullname" Binding="{Binding Name}"/>-->
                 <DataGridTemplateColumn >
@@ -20,14 +20,18 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Customers' Request" HorizontalAlignment="Center" Margin="0,49,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" Foreground="#FF626262" Height="36" Width="196" FontSize="20"/>
+        <Label Content="Customers' Request" HorizontalAlignment="Left" Margin="400,48,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" Foreground="#FF626262" Height="36" Width="196" FontSize="20"/>
         <Button x:Name="btnShowAcceptedRequest"  HorizontalAlignment="Left" Margin="544,356,0,0" VerticalAlignment="Top" Height="52" Width="183" Click="btnShowAcceptedRequest_Click" FontStyle="Italic" Foreground="White" Background="#FF006EC9" BorderBrush="White">
             <StackPanel>
                 <TextBlock Text="Show accepted request" TextWrapping="Wrap"/>
                 <TextBlock Text="(Accepted appointment)" TextWrapping="Wrap"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="170,358,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,384,0,0" VerticalAlignment="Top" Height="40" Width="90" Click="btnLogout_Click"/>
+        <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="138"/>
+        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138"/>
+        <Button x:Name="btn_acceptedApp" Content="Accepted appointment" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,51,0,0" Click="btn_acceptedApp_Click"/>
+        <Button x:Name="btn_showDocList" Content="Doctor list" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,102,0,0" Click="btn_showDocList_Click"/>
 
     </Grid>
 </Window>
