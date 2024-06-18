@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Repositories.Interfaces;
+using Repositories.Repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,11 @@ namespace PRN211_Assignment
     public partial class CreateAccount : Window
     {
         private readonly IAccountRepository _accountRepository;
+        private readonly AccountRepository _accountRepository2;
         public CreateAccount()
         {
             InitializeComponent();
-            
+            _accountRepository2 = new AccountRepository();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -62,7 +64,7 @@ namespace PRN211_Assignment
                 {
                     Id= Guid.NewGuid(),
                     Appointments = [],
-    JoinDate = DateOnly.FromDateTime(DateTime.Now), 
+                    JoinDate = DateOnly.FromDateTime(DateTime.Now), 
                     UserName = user,
                     FullName = fullName,
                     Email = email,
@@ -72,7 +74,7 @@ namespace PRN211_Assignment
                     Department = department,
                     IsMale = gender =="Male"?true:false,
                     };
-                _accountRepository.Create(newAcc);
+                _accountRepository2.Create(newAcc);
             }
             ShowDoctorList sd= new ShowDoctorList();
             sd.Show();

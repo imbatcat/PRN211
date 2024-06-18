@@ -14,7 +14,7 @@
         <Label Content="Date of birth" HorizontalAlignment="Left" Margin="95,199,0,0" VerticalAlignment="Top"/>
         <Label Content="Discriminator" HorizontalAlignment="Left" Margin="95,252,0,0" VerticalAlignment="Top"/>
         <Label Content="Gender" HorizontalAlignment="Left" Margin="95,312,0,0" VerticalAlignment="Top"/>
-        <Label Content="department" HorizontalAlignment="Left" Margin="381,63,0,0" VerticalAlignment="Top"/>
+        <Label Content="Department" HorizontalAlignment="Left" Margin="381,63,0,0" VerticalAlignment="Top"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="400,114,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtUser" HorizontalAlignment="Left" Margin="188,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Height="30"/>
         <PasswordBox x:Name="passWordbox" HorizontalAlignment="Left" Margin="188,102,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
