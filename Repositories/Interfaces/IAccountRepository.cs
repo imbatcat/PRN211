@@ -11,5 +11,6 @@ namespace Repositories.Interfaces
     public interface IAccountRepository
     {
         public AdminDTO? Login(string username, string password);
+        public void Create(Account account);
     }
 }

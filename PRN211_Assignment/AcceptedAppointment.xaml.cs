@@ -105,5 +105,11 @@ namespace PRN211_Assignment
             mainWindow.Show();
             Close();
         }
+        private void btn_CreateAccount_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAccount cA = new CreateAccount();
+            cA.Show();
+            Close();
+        }
     }
 }

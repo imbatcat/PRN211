@@ -15,7 +15,6 @@
         <Label Content="Discriminator" HorizontalAlignment="Left" Margin="95,252,0,0" VerticalAlignment="Top"/>
         <Label Content="Gender" HorizontalAlignment="Left" Margin="95,312,0,0" VerticalAlignment="Top"/>
         <Label Content="department" HorizontalAlignment="Center" Margin="0,63,0,0" VerticalAlignment="Top"/>
-        <Label Content="Join date" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top"/>
         <Label Content="Email" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top"/>
         <Label Content="isDisabled" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtUSer" HorizontalAlignment="Left" Margin="188,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Height="30" Background="#FFD4D4D4"/>

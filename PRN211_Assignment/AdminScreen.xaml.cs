@@ -81,7 +81,7 @@ namespace PRN211_Assignment
         {
             AcceptedAppointment app = new AcceptedAppointment();
             app.Show();
-            app.Close();
+            Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
