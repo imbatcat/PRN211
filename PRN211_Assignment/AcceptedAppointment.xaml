@@ -15,9 +15,10 @@
         </DataGrid>
         <Label Content="Accepted appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="212" FontWeight="Bold" Height="43" FontSize="18" Foreground="#FF7E7E7E"/>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic"/>
-        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="259,324,0,0" VerticalAlignment="Top" Height="37" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic"/>
-        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="536,324,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click" FontStyle="Italic"/>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click"/>
+        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="242,304,0,0" VerticalAlignment="Top" Height="37" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic"/>
+        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="519,304,0,0" VerticalAlignment="Top" Height="34" Width="169" Click="Button_Click" FontStyle="Italic"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="53,301,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click"/>
+        <Button x:Name="btnCreateAccount" Content="Create Account" HorizontalAlignment="Left" Margin="58,365,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.399,0.514" Width="85" Height="35" Click="btn_CreateAccount_Click"/>
 
     </Grid>
 </Window>

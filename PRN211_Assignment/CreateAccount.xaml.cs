@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,11 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class CreateAccount : Window
     {
-        private Account _account = new Account();
+        private readonly IAccountRepository _accountRepository;
         public CreateAccount()
         {
             InitializeComponent();
+            
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -32,45 +34,56 @@ namespace PRN211_Assignment
             var fullName=txtFullname.Text;
             var email=txtEmail.Text;
             var password=passWordbox.Password;
-            var dateOfBirth= dprDOB.SelectedDate;
-            if (dateOfBirth.HasValue)
-            {
-                string formatted = dateOfBirth.Value.ToString("dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            }
-            var discriminator= cbbDiscriminator.SelectedIndex;
-            var gender=cbbGender.SelectedIndex;
-            var department=cbbDepartment.SelectedIndex;
+            var dateOfBirth= dprDOB.SelectedDate.Value;
+            DateOnly dateOfBirth2=DateOnly.FromDateTime(dateOfBirth);
+            //if (dateOfBirth.HasValue)
+            //{
+            //    string formatted = dateOfBirth.Value.ToString("dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            //}
+            var cbbDis= (ComboBoxItem)cbbDiscriminator.SelectedItem;
+            string discriminator = cbbDis.Content.ToString();
+            var cbbGen =(ComboBoxItem)cbbGender.SelectedValue;
+            string gender=cbbGen.Content.ToString();
+            var cbbDep=(ComboBoxItem)cbbDepartment.SelectedItem;
+            string department=cbbDep.Content.ToString();
             if(string.IsNullOrEmpty(user) 
-                && string.IsNullOrEmpty(fullName)
-                && string.IsNullOrEmpty(email)
-                && string.IsNullOrEmpty(password)
-                && cbbDiscriminator.Items.Count==0
-                && cbbDepartment.Items.Count == 0)
+                || string.IsNullOrEmpty(fullName)
+                || string.IsNullOrEmpty(email)
+                || string.IsNullOrEmpty(password)
+                || cbbDiscriminator.Items.Count==0
+                || cbbDepartment.Items.Count == 0)
             {
-                MessageBox.Show("Doctor's name cannot be empty.");
+                MessageBox.Show("Please fill all the required fields");
                 return;
             }
             else
             {
-                //var newAcc = new Account(
-                //    {
-                //    UserName = user,
-                //    FullName = fullName,
-                //    Email = email,
-                //    Password = password,
-                //    DateOfBirth=dateOfBirth.Value,
-                //    Discriminator= discriminator,
-                    
-                //});
+                Account newAcc = new Account
+                {
+                    Id= Guid.NewGuid(),
+                    Appointments = [],
+    JoinDate = DateOnly.FromDateTime(DateTime.Now), 
+                    UserName = user,
+                    FullName = fullName,
+                    Email = email,
+                    Password = password,
+                    DateOfBirth = dateOfBirth2,
+                    Discriminator = discriminator,
+                    Department = department,
+                    IsMale = gender =="Male"?true:false,
+                    };
+                _accountRepository.Create(newAcc);
             }
             ShowDoctorList sd= new ShowDoctorList();
             sd.Show();
-            sd.Close();
+            Close();
         }
 
         private void btnBackPage_Click(object sender, RoutedEventArgs e)
         {
-
+            AcceptedAppointment acceptedAppointment = new AcceptedAppointment();
+            acceptedAppointment.Show();
+            Close();
         }
     }
 }

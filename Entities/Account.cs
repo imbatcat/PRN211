@@ -32,11 +32,6 @@ namespace Entities
         public bool IsMale {  get; set; }
 
         public DateOnly JoinDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-
-        public string? Department { get; set; }
-
-        public bool IsMale { get; set; }
-
         [EmailAddress]
         public string Email { get; set; }
 

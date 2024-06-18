@@ -29,7 +29,11 @@
             <ComboBoxItem Content="Male"/>
             <ComboBoxItem Content="Female"/>
         </ComboBox>
-        <ComboBox x:Name="cbbDepartment" HorizontalAlignment="Left" Margin="478,60,0,0" VerticalAlignment="Top" Width="140" Height="31"/>
+        <ComboBox x:Name="cbbDepartment" HorizontalAlignment="Left" Margin="478,60,0,0" VerticalAlignment="Top" Width="140" Height="31">
+            <ComboBoxItem Content="Surgery"/>
+            <ComboBoxItem Content="Orthopedic"/>
+            <ComboBoxItem Content="Cardiology"/>
+        </ComboBox>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="409,255,0,0" VerticalAlignment="Top" Height="39" Width="209" FontStyle="Italic" FontSize="14" Click="btnSave_Click"/>
         <Button x:Name="btnBackPage" Content="Back" HorizontalAlignment="Left" Margin="409,316,0,0" VerticalAlignment="Top" Height="39" Width="209" FontStyle="Italic" FontSize="14" Click="btnBackPage_Click"/>
  

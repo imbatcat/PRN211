@@ -13,10 +13,12 @@ namespace Repositories.Repos
     public class AccountRepository : IAccountRepository
     {
         private readonly IRepositoryBase<Account> _repository;
+        private readonly HospitalAppDbContext _context;
 
         public AccountRepository()
         {
             _repository = new RepositoryBase<Account>();
+            _context = new HospitalAppDbContext();
         }
 
         public AdminDTO? Login(string username, string password)
@@ -28,6 +30,10 @@ namespace Repositories.Repos
                 return new AdminDTO { Discrimator = acc.Discriminator, FullName = acc.FullName };
             }
             return null;
+        }
+        public void Create(Account account)
+        {
+            _repository.Add(account);
         }
     }
 }
