@@ -6,18 +6,20 @@
         mc:Ignorable="d"
         Title="AcceptedAppointment" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtgAccepted" ItemsSource="{Binding List}"  Margin="26,70,418,185">
+        <DataGrid x:Name="dtgAccepted" ItemsSource="{Binding List}"  Margin="294,65,150,190">
             <!--<DataGrid.Columns>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Created date" Binding="{Binding DateCreated}"/>
             </DataGrid.Columns>-->
         </DataGrid>
-        <Label Content="Accepted appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="212" FontWeight="Bold" Height="43" FontSize="18" Foreground="#FF7E7E7E"/>
-        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic" Foreground="Red"/>
-        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="365,323,0,0" VerticalAlignment="Top" Height="37" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic" BorderBrush="White" Background="#FF006EC9" Foreground="White"/>
-        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="542,114,0,0" VerticalAlignment="Top" Height="81" Width="141" Click="Button_Click" FontStyle="Italic" Foreground="Black" BorderBrush="White" Background="LightSteelBlue"/>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Background="#FFE74C3C" FontStyle="Italic" Foreground="White" BorderBrush="White"/>
-        <Button x:Name="btnBackPage_Copy" Content="Show waiting request " HorizontalAlignment="Left" Margin="542,323,0,0" VerticalAlignment="Top" Height="37" Width="141" Click="btnBackPage_Click" FontStyle="Italic" BorderBrush="White" Background="#FF006EC9" Foreground="White"/>
+        <Label Content="Accepted appointment" HorizontalAlignment="Left" Margin="366,22,0,0" VerticalAlignment="Top" Width="212" FontWeight="Bold" Height="43" FontSize="18" Foreground="#FF7E7E7E"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FFE74C3C" FontStyle="Italic" BorderBrush="White"/>
+        <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Top" Width="138"/>
+        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FF68D2DD"/>
+        <Button x:Name="btn_acceptedApp" Content="Accepted appointment" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,51,0,0" Click="btn_acceptedApp_Click"/>
+        <Button x:Name="btn_showDocList" Content="Doctor list" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,102,0,0" Click="btn_showDocList_Click"/>
+        <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click"/>
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="715,11,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
 
     </Grid>
 </Window>

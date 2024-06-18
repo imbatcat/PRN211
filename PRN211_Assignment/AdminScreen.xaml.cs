@@ -1,6 +1,7 @@
 ﻿using Core;
 using Entities;
 using Repositories;
+using Repositories.Repos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace PRN211_Assignment
         private Appointment _appointment = new Appointment();
 
         private AcceptedAppointmentList _list;
+        private readonly RequestAppointmentRepository _requestAppointmentRepository;
         public event PropertyChangedEventHandler? PropertyChanged;
 
         public AcceptedAppointmentList List
@@ -40,9 +42,11 @@ namespace PRN211_Assignment
         }
         public AdminScreen()
         {
-            DataContext = this;
             InitializeComponent();
             List = new AcceptedAppointmentList();
+            _requestAppointmentRepository = new RequestAppointmentRepository();
+            List<AppointmentRequest> appointmentRequestList = (List<AppointmentRequest>)_requestAppointmentRepository.GetAllAppointmentRequest();
+            DataContext = appointmentRequestList;
         }
 
         public AdminScreen(List<AcceptedAppointmentDTO> list)
@@ -76,12 +80,7 @@ namespace PRN211_Assignment
             //}
         }
 
-        private void btnShowAcceptedRequest_Click(object sender, RoutedEventArgs e)
-        {
-            AcceptedAppointment app = new AcceptedAppointment();
-            app.Show();
-            Close();
-        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -148,11 +147,32 @@ namespace PRN211_Assignment
             }
         }
 
-        private void btnShowDoctorList(object sender, RoutedEventArgs e)
+        private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
         {
-            ShowDoctorList mainWindow = new ShowDoctorList();
-            mainWindow.Show();
+            AcceptedAppointment acceptedAppointmentWindow = new AcceptedAppointment();
+            acceptedAppointmentWindow.Show();
             Close();
         }
+
+        private void btn_showDocList_Click(object sender, RoutedEventArgs e)
+        {
+            ShowDoctorList showDoctorListWindow = new ShowDoctorList();
+            showDoctorListWindow.Show();
+            Close();
+        }
+
+        private void btn_CreateAccount_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAccount createAccountWindow = new CreateAccount();
+            createAccountWindow.Show();
+            Close();
+        }
+
+        //private void btnShowDoctorList(object sender, RoutedEventArgs e)
+        //{
+        //    ShowDoctorList mainWindow = new ShowDoctorList();
+        //    mainWindow.Show();
+        //    Close();
+        //}
     }
 }

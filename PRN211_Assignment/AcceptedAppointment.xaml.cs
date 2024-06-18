@@ -105,10 +105,30 @@ namespace PRN211_Assignment
             mainWindow.Show();
             Close();
         }
+
+        private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btn_showDocList_Click(object sender, RoutedEventArgs e)
+        {
+            ShowDoctorList showDoctorListWindow = new ShowDoctorList();
+            showDoctorListWindow.Show();
+            Close();
+        }
+
         private void btn_CreateAccount_Click(object sender, RoutedEventArgs e)
         {
-            CreateAccount cA = new CreateAccount();
-            cA.Show();
+            CreateAccount createAccountWindow = new CreateAccount();
+            createAccountWindow.Show();
+            Close();
+        }
+
+        private void btn_cusRequest_Click(object sender, RoutedEventArgs e)
+        {
+            AdminScreen adminScreenWindow = new AdminScreen();
+            adminScreenWindow.Show();
             Close();
         }
     }

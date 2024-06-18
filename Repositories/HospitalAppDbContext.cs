@@ -9,6 +9,8 @@ namespace Repositories
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
 
+        public DbSet<AppointmentRequest> AppointmentRequests { get; set; }
+
         public HospitalAppDbContext() : base()
         {
             Database.EnsureCreated();

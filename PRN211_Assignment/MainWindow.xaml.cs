@@ -21,9 +21,11 @@ namespace PRN211_Assignment
     public partial class MainWindow : Window
     {
         public List<AcceptedAppointmentDTO> _list { get; set; }
+        public readonly RequestAppointmentRepository _requestAppointmentRepository;
         public MainWindow()
         {
             InitializeComponent();
+            _requestAppointmentRepository = new RequestAppointmentRepository();
             _list = new List<AcceptedAppointmentDTO>();
         }
 
@@ -53,7 +55,8 @@ namespace PRN211_Assignment
                 CustomerName = txtFullname.Text,
                 DateCreated = DateOnly.FromDateTime(DateTime.Now)
             };
-            _list.Add(newAppointment);
+            //_list.Add(newAppointment);
+            _requestAppointmentRepository.saveRequestAppointment(newAppointment);
 
             MessageBox.Show("Register appointment Successfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Information);
         }

@@ -25,6 +25,9 @@ namespace Entities
 
         // Reference entity
         public Guid AccountId { get; set; }
+
+        public Guid appRequestId { get; set; }
         public Account Account { get; set; }
+
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Core;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,6 +65,38 @@ namespace PRN211_Assignment
         private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
+
+        private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
+        {
+            AcceptedAppointment acceptedAppointmentWindow = new AcceptedAppointment();
+            acceptedAppointmentWindow.Show();
+            Close();
+        }
+
+        private void btn_showDocList_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void btn_CreateAccount_Click(object sender, RoutedEventArgs e)
+        {
+            CreateAccount createAccountWindow = new CreateAccount();
+            createAccountWindow.Show();
+            Close();
+        }
+
+        private void btn_cusRequest_Click(object sender, RoutedEventArgs e)
+        {
+            AdminScreen adminScreenWindow = new AdminScreen();
+            adminScreenWindow.Show();
+            Close();
         }
     }
 }
