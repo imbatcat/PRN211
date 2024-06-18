@@ -8,26 +8,35 @@
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
-        <DataGrid x:Name="dtgCusRequest" Margin="89,104,73,165" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True">
+        <DataGrid x:Name="dtgCusRequest" Margin="78,76,464,115" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True">
             <DataGrid.Columns>
-                <!--<DataGridTextColumn Header="Fullname" Binding="{Binding Name}"/>-->
-                <DataGridTemplateColumn >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="btnCreateAppointment" Content="Create" Click="Button_Click"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Fullname" Binding="{Binding Fullname}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Customers' Request" HorizontalAlignment="Center" Margin="0,49,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" Foreground="#FF626262" Height="36" Width="196" FontSize="20"/>
-        <Button x:Name="btnShowAcceptedRequest"  HorizontalAlignment="Left" Margin="544,356,0,0" VerticalAlignment="Top" Height="52" Width="183" Click="btnShowAcceptedRequest_Click" FontStyle="Italic" Foreground="White" Background="#FF006EC9" BorderBrush="White">
+        <Label Content="Customers' Request" HorizontalAlignment="Left" Margin="114,35,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" Foreground="#FF626262" Height="36" Width="196" FontSize="20"/>
+        <Button x:Name="btnShowAcceptedRequest"  HorizontalAlignment="Left" Margin="578,356,0,0" VerticalAlignment="Top" Height="52" Width="184" Click="btnShowAcceptedRequest_Click" FontStyle="Italic" Foreground="White" Background="#FF006EC9" BorderBrush="White">
             <StackPanel>
                 <TextBlock Text="Show accepted request" TextWrapping="Wrap"/>
                 <TextBlock Text="(Accepted appointment)" TextWrapping="Wrap"/>
             </StackPanel>
         </Button>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="170,358,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="162,356,0,0" VerticalAlignment="Top" Height="52" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FFE74C3C" FontStyle="Italic" BorderBrush="White"/>
+        <GroupBox Header="Please fill request infomation 🥰" Margin="449,46,79,115" FontStyle="Italic" FontWeight="Bold" Foreground="#FF6B6B6B"/>
+        <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Margin="585,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="24" Background="Gainsboro"/>
+        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Margin="585,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="24" Background="Gainsboro"/>
+        <ComboBox Name="cbbDocID" HorizontalAlignment="Left" Margin="585,192,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+        <Label Content="Customer's name :" HorizontalAlignment="Left" Margin="462,68,0,0" VerticalAlignment="Top" Width="108" Height="26" Background="White" Foreground="#FF505050"/>
+        <Label Content="Note" HorizontalAlignment="Left" Margin="462,116,0,0" VerticalAlignment="Top" Width="106" Height="24" Foreground="#FF505050"/>
+        <Label Content="Doctor :" HorizontalAlignment="Left" Margin="462,192,0,0" VerticalAlignment="Top" Width="106" Height="23" Foreground="#FF505050"/>
+        <Button x:Name="btnCreateAppointment" Content="Create" HorizontalAlignment="Left" Margin="521,244,0,0" VerticalAlignment="Top" Width="128" Height="39" Background="LightSteelBlue" Foreground="Black" BorderBrush="White" FontStyle="Italic" Click="btnCreateAppointment_Click"/>
+        <Label Content="Department :" HorizontalAlignment="Left" Margin="462,155,0,0" VerticalAlignment="Top" Width="128" Height="26" Foreground="#FF505050"/>
+        <ComboBox x:Name="cbbDepartment" HorizontalAlignment="Left" Margin="585,156,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+        <Button x:Name="btnShowDoctorL"  HorizontalAlignment="Left" Margin="379,356,0,0" VerticalAlignment="Top" Height="52" Width="183" Click="btnShowDoctorList" FontStyle="Italic" Foreground="White" Background="#FF006EC9" BorderBrush="White">
+            <StackPanel>
+                <TextBlock Text="Show doctor list" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Button>
+
 
     </Grid>
 </Window>

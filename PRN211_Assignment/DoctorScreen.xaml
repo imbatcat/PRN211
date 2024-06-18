@@ -22,11 +22,18 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="IsCancelled" Binding="{Binding IsCancelled}"/>
+                <DataGridTemplateColumn Header="IsCancelled">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsCancelled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Doctor ID" Binding="{Binding DoctorId}"/>
 
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="601,345,0,0" VerticalAlignment="Top" Height="56" Width="172" FontStyle="Italic" Click="btnSave_Click" Background="#FF006EC9" Foreground="White" FontSize="16" BorderBrush="White"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="46,345,0,0" VerticalAlignment="Top" Height="56" Width="172" Background="#FFE74C3C" BorderBrush="White" Foreground="White" FontSize="16" FontStyle="Italic" Click="btnLogout_Click"/>
     </Grid>
 </Window>

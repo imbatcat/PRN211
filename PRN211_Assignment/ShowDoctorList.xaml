@@ -32,8 +32,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="596,287,0,0" VerticalAlignment="Top" Height="56" Width="159" FontStyle="Italic" Click="btnUpdate_Click" Background="#FFF5FF88" BorderBrush="White" Foreground="#FF83A603"/>
-        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="596,357,0,0" VerticalAlignment="Top" Height="51" Width="159" FontStyle="Italic" Click="btnCreate_Click" Background="#FFF5FF88" BorderBrush="White" Foreground="#FF83A603"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="596,287,0,0" VerticalAlignment="Top" Height="56" Width="159" FontStyle="Italic" Click="btnUpdate_Click" Background="LightSteelBlue" BorderBrush="White" Foreground="Black"/>
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="596,357,0,0" VerticalAlignment="Top" Height="51" Width="159" FontStyle="Italic" Click="btnCreate_Click" Background="LightSteelBlue" BorderBrush="White" Foreground="Black"/>
         <Button x:Name="btnShowRequest" Content="Show waiting request" HorizontalAlignment="Left" Margin="18,328,0,0" VerticalAlignment="Top" Height="80" Width="146" Click="Button_Click" FontStyle="Italic" BorderBrush="White" Background="#FF006EC9" Foreground="White"/>
         <Button x:Name="btnShowAppointment" Content="Show accepted appointment" HorizontalAlignment="Left" Margin="193,328,0,0" VerticalAlignment="Top" Height="81" Width="163" Click="btnShowAppointment_Click" FontStyle="Italic" BorderBrush="White" Background="#FF006EC9" Foreground="White"/>
 

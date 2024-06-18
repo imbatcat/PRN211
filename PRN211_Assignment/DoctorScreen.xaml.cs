@@ -38,5 +38,12 @@ namespace PRN211_Assignment
             //    bool isChecked = checkBox.IsChecked ?? false;
             //}
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }
