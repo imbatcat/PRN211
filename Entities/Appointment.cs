@@ -15,8 +15,6 @@ namespace Entities
 
         public DateOnly DateCreated { get; set; }
 
-        public DateOnly DateUpdated { get; set; }
-
         public string Notes { get; set; }
 
         public string CustomerName { get; set; }
