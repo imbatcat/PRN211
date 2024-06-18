@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
-        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9"/>
-        <DataGrid x:Name="dtgCusRequest" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="124,104,124,165" SelectionChanged="dtgCusRequest_SelectionChanged">
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
+        <DataGrid x:Name="dtgCusRequest" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="89,104,73,165" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fullname" Binding="{Binding Name}"/>
                 <DataGridTemplateColumn Header="Create appointment">
@@ -20,8 +20,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Customers' Request" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button x:Name="btnShowAcceptedRequest"  HorizontalAlignment="Left" Margin="493,339,0,0" VerticalAlignment="Top" Height="52" Width="183" Click="btnShowAcceptedRequest_Click" FontStyle="Italic">
+        <Label Content="Customers' Request" HorizontalAlignment="Center" Margin="0,49,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="White" Foreground="#FF626262" Height="36" Width="196" FontSize="20"/>
+        <Button x:Name="btnShowAcceptedRequest"  HorizontalAlignment="Left" Margin="544,356,0,0" VerticalAlignment="Top" Height="52" Width="183" Click="btnShowAcceptedRequest_Click" FontStyle="Italic" Foreground="White" Background="#FF006EC9" BorderBrush="White">
             <StackPanel>
                 <TextBlock Text="Show accepted request" TextWrapping="Wrap"/>
                 <TextBlock Text="(Accepted appointment)" TextWrapping="Wrap"/>

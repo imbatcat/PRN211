@@ -58,5 +58,10 @@ namespace PRN211_Assignment
             ad.Show();
             Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

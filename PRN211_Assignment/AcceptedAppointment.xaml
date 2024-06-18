@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AcceptedAppointment" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtgAccepted" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="26,70,58,185">
+        <DataGrid x:Name="dtgAccepted" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="26,70,34,185">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
@@ -20,10 +20,11 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Accepted appointment" HorizontalAlignment="Left" Margin="314,39,0,0" VerticalAlignment="Top" Width="140" FontWeight="Bold"/>
+        <Label Content="Accepted appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="212" FontWeight="Bold" Height="43" FontSize="18" Foreground="#FF7E7E7E"/>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontSize="10" FontStyle="Italic"/>
-        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="259,316,0,0" VerticalAlignment="Top" Height="58" Width="141" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic"/>
-        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="542,316,0,0" VerticalAlignment="Top" Height="58" Width="169" Click="Button_Click" FontStyle="Italic"/>
+        <Button x:Name="btnBackPage" Content="Show waiting request " HorizontalAlignment="Left" Margin="26,329,0,0" VerticalAlignment="Top" Height="69" Width="151" ButtonBase.Click="btnBackPage_Click" FontStyle="Italic" Background="#FF006EC9" Foreground="White"/>
+        <Button x:Name="btnUpdateApp" Content="Update" HorizontalAlignment="Left" Margin="597,329,0,0" VerticalAlignment="Top" Height="69" Width="169" Click="Button_Click" FontStyle="Italic" Background="#FFF5FF88" BorderBrush="White" Foreground="#FF83A603" FontWeight="Bold"/>
+        <Button Content="Show doctor list" HorizontalAlignment="Left" Margin="196,329,0,0" VerticalAlignment="Top" Height="69" Width="151" Background="#FF006EC9" FontStyle="Italic" Foreground="White" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
