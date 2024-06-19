@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repositories.Repos
 {
-    public class RequestAppointmentRepository : IRequestAppointment
+    public class RequestAppointmentRepository : RepositoryBase<AppointmentRepository>,IRequestAppointment
     {
         private readonly HospitalAppDbContext _hospitalAppDbContext;
         private readonly IRepositoryBase<AppointmentRequest> _repository;
