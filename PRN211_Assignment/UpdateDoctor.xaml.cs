@@ -34,7 +34,7 @@ namespace PRN211_Assignment
         {
             ShowDoctorList ad = new ShowDoctorList();
             ad.Show();
-            ad.Close();
+            this.Close();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

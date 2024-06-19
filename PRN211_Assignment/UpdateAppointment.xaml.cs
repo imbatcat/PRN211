@@ -40,7 +40,7 @@ namespace PRN211_Assignment
         {
             AcceptedAppointment ad = new AcceptedAppointment();
             ad.Show();
-            ad.Close();
+            this.Close();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
