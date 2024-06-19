@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="AcceptedAppointment" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtgAccepted" ItemsSource="{Binding List}"  Margin="294,65,150,190">
+        <DataGrid x:Name="dtgAccepted" ItemsSource="{Binding List}"  Margin="26,70,95,185">
             <!--<DataGrid.Columns>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Created date" Binding="{Binding DateCreated}"/>

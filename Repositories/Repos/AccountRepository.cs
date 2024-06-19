@@ -1,24 +1,39 @@
-﻿using Core;
+﻿using Core.Accounts;
 using Entities;
-using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories.Repos
 {
-    public class AccountRepository : IAccountRepository
+    public class AccountRepository : RepositoryBase<Account>, IAccountRepository
     {
         private readonly IRepositoryBase<Account> _repository;
-        private readonly HospitalAppDbContext _context;
 
         public AccountRepository()
         {
             _repository = new RepositoryBase<Account>();
-            _context = new HospitalAppDbContext();
+        }
+
+        public IEnumerable<DoctorDTO>? GetAllDoctors()
+        {
+            var accounts = _repository.GetAll();
+            List<DoctorDTO> res = [];
+            foreach (Account acc in accounts)
+            {
+                if (acc.Discriminator == "Doctor")
+                {
+                    res.Add(new DoctorDTO
+                    {
+                        DateOfBirth = acc.DateOfBirth,
+                        Department = acc.Department,
+                        DoctorName = acc.FullName,
+                        Email = acc.Email,
+                        IsMale = acc.IsMale,
+                        JoinDate = acc.JoinDate
+                    });
+
+                }
+            }
+            return res;
         }
 
         public AdminDTO? Login(string username, string password)

@@ -1,19 +1,7 @@
-﻿using Core;
-using Entities;
-using System;
-using System.Collections.Generic;
+﻿using Repositories.Interfaces;
+using Repositories.Repos;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PRN211_Assignment
 {
@@ -22,38 +10,11 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class AcceptedAppointment : Window, INotifyPropertyChanged
     {
-        //    private static readonly Lazy<AcceptedAppointment> instance =
-        //new Lazy<AcceptedAppointment>(() => new AcceptedAppointment());
-
-        //    public static AcceptedAppointment Instance => instance.Value;
-        private AcceptedAppointmentList _list;
-
-        public AcceptedAppointmentList List
-        {
-            get { return _list; }
-            set
-            {
-                _list = value;
-                OnPropertyChanged(nameof(List));
-                //DataContext = this;
-
-            }
-        }
+        private readonly IAppointmentRepository _appointmentRepository = new AppointmentRepository();
         public AcceptedAppointment()
         {
-
             InitializeComponent();
-            List = new AcceptedAppointmentList();
-        }
-        public AcceptedAppointment(List<AcceptedAppointmentDTO> list)
-        {
-            InitializeComponent();
-            List = new AcceptedAppointmentList();
-            foreach (var item in list)
-            {
-                List.AddAppointment(item);
-            }
-
+            dtgAccepted.ItemsSource = _appointmentRepository.GetAll();
             //load datagrid
             //using (var dbcontext = new db())
             //{
@@ -96,19 +57,16 @@ namespace PRN211_Assignment
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            List<AcceptedAppointmentDTO> list = [];
-            foreach (var item in _list)
-            {
-                list.Add(item);
-            }
-            MainWindow mainWindow = new MainWindow(list);
+            MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
         }
 
         private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
         {
-            
+            AcceptedAppointment acceptedAppointmentWindow = new AcceptedAppointment();
+            acceptedAppointmentWindow.Show();
+            Close();
         }
 
         private void btn_showDocList_Click(object sender, RoutedEventArgs e)

@@ -1,16 +1,11 @@
-﻿using Core;
+﻿using Core.Accounts;
 using Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories.Interfaces
 {
-    public interface IAccountRepository
+    public interface IAccountRepository : IRepositoryBase<Account>
     {
         public AdminDTO? Login(string username, string password);
-        public void Create(Account account);
+        public IEnumerable<DoctorDTO>? GetAllDoctors();
     }
 }

@@ -5,15 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Repositories.Interfaces;
+using Repositories.Repos;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PRN211_Assignment
 {
@@ -22,9 +17,11 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class ShowDoctorList : System.Windows.Window
     {
+        private readonly IAccountRepository _accountRepository = new AccountRepository();
         public ShowDoctorList()
         {
             InitializeComponent();
+            dtgDocList.ItemsSource = _accountRepository.GetAllDoctors();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
