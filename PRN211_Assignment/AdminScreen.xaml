@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
-        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="715,11,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
-        <DataGrid x:Name="dtgCusRequest" Margin="174,76,368,115" ItemsSource="{Binding}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True" AutoGenerateColumns="False" Width="258">
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
+        <DataGrid x:Name="dtgCusRequest" Margin="165,98,359,170" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fullname" Binding="{Binding customerName}"/>
                 <DataGridTextColumn Header="Request Date" Binding="{Binding requestDate}"/>

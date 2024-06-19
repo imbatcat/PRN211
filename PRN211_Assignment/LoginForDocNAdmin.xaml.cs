@@ -1,18 +1,7 @@
-﻿using Core;
+﻿using Core.Appointments;
+using Repositories.Interfaces;
 using Repositories.Repos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PRN211_Assignment
 {
@@ -21,7 +10,7 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class LoginForDocNAdmin : Window
     {
-        private readonly AccountRepository accountRepository = new AccountRepository();
+        private readonly IAccountRepository accountRepository = new AccountRepository();
         public List<AcceptedAppointmentDTO> _list { get; set; }
         public LoginForDocNAdmin(List<AcceptedAppointmentDTO> list)
         {
@@ -46,6 +35,7 @@ namespace PRN211_Assignment
                         break;
                     case "Admin":
                         AdminScreen Window = new AdminScreen();
+                        //ShowDoctorList Window = new ShowDoctorList();
                         Window.Show();
                         Close();
                         //admin window

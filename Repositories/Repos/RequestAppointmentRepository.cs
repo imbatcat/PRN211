@@ -1,4 +1,5 @@
 ﻿using Core;
+using Core.Appointments;
 using Entities;
 using Repositories.Interfaces;
 using System;
@@ -9,13 +10,11 @@ using System.Threading.Tasks;
 
 namespace Repositories.Repos
 {
-    public class RequestAppointmentRepository : IRequestAppointment
+    public class RequestAppointmentRepository : RepositoryBase<AppointmentRequest>, IRequestAppointment
     {
-        private readonly HospitalAppDbContext _hospitalAppDbContext;
         private readonly IRepositoryBase<AppointmentRequest> _repository;
         public RequestAppointmentRepository()
         {
-            _hospitalAppDbContext = new HospitalAppDbContext();
             _repository = new RepositoryBase<AppointmentRequest>();
         }
 
@@ -29,11 +28,6 @@ namespace Repositories.Repos
                 customerName = appointment.CustomerName,
             };
             _repository.Add(toAddRequestAppointment);
-        }
-
-        public IEnumerable<AppointmentRequest> GetAllAppointmentRequest()
-        {
-            return _hospitalAppDbContext.AppointmentRequests.ToList();
         }
     }
 }

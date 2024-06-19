@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entities
 {
@@ -28,8 +23,8 @@ namespace Entities
         public string Discriminator { get; set; }
 
         public DateOnly DateOfBirth { get; set; }
-        public string? Department {  get; set; }
-        public bool IsMale {  get; set; }
+        public string? Department { get; set; }
+        public bool IsMale { get; set; }
 
         public DateOnly JoinDate { get; set; } = DateOnly.FromDateTime(DateTime.Now);
         [EmailAddress]

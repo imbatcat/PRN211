@@ -1,6 +1,6 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
 
 namespace Repositories
 {
@@ -23,7 +23,18 @@ namespace Repositories
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=LAPTOP-8QVR89KA\SQLEXPRESS02;uid=sa;pwd=12345;database=PRN211HospitalApp;TrustServerCertificate=True");
+
+            optionsBuilder.UseSqlServer(GetConnectionString());
+        }
+        private string GetConnectionString()
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                 .SetBasePath(Directory.GetCurrentDirectory())
+                        .AddJsonFile("appsettings.json", true, true)
+                        .Build();
+            var strConn = config["ConnectionStrings:DefaultConnectionStringDB"];
+
+            return strConn;
         }
     }
 }

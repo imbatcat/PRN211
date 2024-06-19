@@ -1,14 +1,9 @@
 ﻿using Entities;
 using Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories.Repos
 {
-    public class AppointmentRepository : IAppointmentRepository
+    public class AppointmentRepository : RepositoryBase<Appointment>, IAppointmentRepository
     {
         private readonly IRepositoryBase<Appointment> _repository;
 
@@ -16,6 +11,5 @@ namespace Repositories.Repos
         {
             _repository = new RepositoryBase<Appointment>();
         }
-
     }
 }
