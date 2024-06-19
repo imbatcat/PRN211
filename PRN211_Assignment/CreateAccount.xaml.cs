@@ -24,7 +24,6 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class CreateAccount : Window
     {
-        private readonly IAccountRepository _accountRepository;
         private readonly AccountRepository _accountRepository2;
         public CreateAccount()
         {
