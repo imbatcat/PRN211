@@ -1,63 +1,29 @@
-﻿using Core;
+﻿using Core.Appointments;
 using Entities;
 using Repositories;
 using Repositories.Repos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PRN211_Assignment
 {
     /// <summary>
     /// Interaction logic for AdminScreen.xaml
     /// </summary>
-    public partial class AdminScreen : System.Windows.Window, INotifyPropertyChanged
+    public partial class AdminScreen : Window
     {
-        private Appointment _appointment = new Appointment();
-
-        private AcceptedAppointmentList _list;
         private readonly RequestAppointmentRepository _requestAppointmentRepository;
-        public event PropertyChangedEventHandler? PropertyChanged;
 
-        public AcceptedAppointmentList List
-        {
-            get { return _list; }
-            set
-            {
-                _list = value;
-                OnPropertyChanged(nameof(List));
-            }
-        }
+        public AcceptedAppointmentList List;
         public AdminScreen()
         {
             InitializeComponent();
             List = new AcceptedAppointmentList();
             _requestAppointmentRepository = new RequestAppointmentRepository();
-            List<AppointmentRequest> appointmentRequestList = (List<AppointmentRequest>)_requestAppointmentRepository.GetAllAppointmentRequest();
-            DataContext = appointmentRequestList;
-        }
-
-        public AdminScreen(List<AcceptedAppointmentDTO> list)
-        {
-            DataContext = this;
-            InitializeComponent();
-            List = new AcceptedAppointmentList();
-            foreach (var items in list)
-            {
-                List.AddAppointment(items);
-            }
+            dtgCusRequest.ItemsSource = _requestAppointmentRepository.GetAll().ToList();
         }
 
         private void dtgCusRequest_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -80,71 +46,48 @@ namespace PRN211_Assignment
             //}
         }
 
-
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            List<AcceptedAppointmentDTO> list = [];
-            foreach (var item in _list)
-            {
-                list.Add(item);
-            }
-            MainWindow mainWindow = new MainWindow(list);
+            MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
         }
 
         private void btnCreateAppointment_Click(object sender, RoutedEventArgs e)
         {
-            if (_appointment != null)
-            {
-                var cus = txtCusName.Text;
-                if (string.IsNullOrWhiteSpace(cus))
-                {
-                    MessageBox.Show("Customer's name cannot be empty.");
-                    return;
-                }
-                var note = txtNote.Text;
-                
+            //var cus = txtCusName.Text;
+            //if (string.IsNullOrWhiteSpace(cus))
+            //{
+            //    MessageBox.Show("Customer's name cannot be empty.");
+            //    return;
+            //}
+            //var note = txtNote.Text;
 
-                //if (cbbIsCheckedUp.SelectedItem != null)
-                //{
-                //    string selectedValue = cbbIsCheckedUp.SelectedItem.ToString();
-                //    if (selectedValue.Equals("Yes"))
-                //    {
-                //        check = true;
-                //    }
-                //    else check = false;
-                //}
 
-                //if (cbbIsCancelled.SelectedItem != null)
-                //{
-                //    string selectedValue = cbbIsCancelled.SelectedItem.ToString();
-                //    if (selectedValue.Equals("Yes"))
-                //    {
-                //        cancel = true;
-                //    }
-                //    else cancel = false;
-                //}
+            //if (cbbIsCheckedUp.SelectedItem != null)
+            //{
+            //    string selectedValue = cbbIsCheckedUp.SelectedItem.ToString();
+            //    if (selectedValue.Equals("Yes"))
+            //    {
+            //        check = true;
+            //    }
+            //    else check = false;
+            //}
 
-                _appointment.DateCreated = DateOnly.FromDateTime(DateTime.Now);
-                _appointment.CustomerName = cus;
-                _appointment.Notes = note;
-
-                DialogResult = true;
-                this.Tag = _appointment;
-                Close();
-            }
+            //if (cbbIsCancelled.SelectedItem != null)
+            //{
+            //    string selectedValue = cbbIsCancelled.SelectedItem.ToString();
+            //    if (selectedValue.Equals("Yes"))
+            //    {
+            //        cancel = true;
+            //    }
+            //    else cancel = false;
+            //}
         }
 
         private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)

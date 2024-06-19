@@ -1,17 +1,8 @@
-﻿using Core;
-using Microsoft.Identity.Client;
+﻿using Core.Appointments;
 using Microsoft.IdentityModel.Tokens;
+using Repositories.Interfaces;
 using Repositories.Repos;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PRN211_Assignment
 {
@@ -21,19 +12,12 @@ namespace PRN211_Assignment
     public partial class MainWindow : Window
     {
         public List<AcceptedAppointmentDTO> _list { get; set; }
-        public readonly RequestAppointmentRepository _requestAppointmentRepository;
+        public readonly IRequestAppointment _requestAppointmentRepository;
         public MainWindow()
         {
             InitializeComponent();
             _requestAppointmentRepository = new RequestAppointmentRepository();
             _list = new List<AcceptedAppointmentDTO>();
-        }
-
-        public MainWindow(List<AcceptedAppointmentDTO> list)
-        {
-            InitializeComponent();
-            _list = list;
-            DataContext = this;
         }
 
         private void btnDocLogin_Click(object sender, RoutedEventArgs e)

@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Repositories.Interfaces
+﻿namespace Repositories.Interfaces
 {
     public interface IRepositoryBase<T> where T : class
     {
         public void Add(T entity);
         public void Update(T entity, T updateEntity);
-        public IEnumerable<T> GetAll(T entity);
+        public IEnumerable<T> GetAll();
         public bool Any(Func<T, bool> predicate);
         public T? GetByCondition(Func<T, bool> predicate);
         public void Save();

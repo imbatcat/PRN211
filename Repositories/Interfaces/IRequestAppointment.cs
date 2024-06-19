@@ -1,4 +1,5 @@
 ﻿using Core;
+using Core.Appointments;
 using Entities;
 using Repositories.Repos;
 using System;
@@ -9,9 +10,8 @@ using System.Threading.Tasks;
 
 namespace Repositories.Interfaces
 {
-    public interface IRequestAppointment
+    public interface IRequestAppointment : IRepositoryBase<AppointmentRequest>
     {
         public void saveRequestAppointment(AcceptedAppointmentDTO appointment);
-        public IEnumerable<AppointmentRequest> GetAllAppointmentRequest();
     }
 }

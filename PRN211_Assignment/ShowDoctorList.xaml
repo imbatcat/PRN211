@@ -8,19 +8,9 @@
         Title="ShowDoctorList" Height="450" Width="800">
     <Grid>
         <Label Content="Show doctor list" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="49" Width="187" FontSize="22" FontStyle="Italic" Foreground="#FF707070"/>
-        <DataGrid x:Name="dtgDocList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="144,64,24,203" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid x:Name="dtgDocList" Margin="155,64,24,203" IsReadOnly="True"  >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
-                <DataGridTextColumn Header="Username" Binding="{Binding username}"/>
-                <DataGridTextColumn Header="Password" Binding="{Binding password}"/>
-                <DataGridTextColumn Header="Fullname" Binding="{Binding Fullname}"/>
-                <DataGridTextColumn Header="Date of birth" Binding="{Binding dateOfBirth}"/>
-                <DataGridTextColumn Header="Discriminator" Binding="{Binding discriminator}"/>
-                <DataGridTextColumn Header="Gender" Binding="{Binding gender}"/>
-                <DataGridTextColumn Header="Department" Binding="{Binding department}"/>
-                <DataGridTextColumn Header="Join date" Binding="{Binding joinDate}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding email}"/>
-                <DataGridTextColumn Header="Working" Binding="{Binding isDisabled}"/>
+
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
