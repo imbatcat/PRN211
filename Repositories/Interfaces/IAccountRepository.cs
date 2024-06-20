@@ -7,5 +7,6 @@ namespace Repositories.Interfaces
     {
         public LoginAccountDTO? Login(string username, string password);
         public IEnumerable<DoctorDTO>? GetAllDoctors();
+        public IEnumerable<Account> GetDoctorWithDepartment(string department);
     }
 }

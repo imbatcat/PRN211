@@ -1,16 +1,18 @@
 ﻿using Core.Accounts;
 using Entities;
 using Repositories.Interfaces;
+using System.Runtime.CompilerServices;
 
 namespace Repositories.Repos
 {
     public class AccountRepository : RepositoryBase<Account>, IAccountRepository
     {
         private readonly IRepositoryBase<Account> _repository;
-
+        private HospitalAppDbContext _context;
         public AccountRepository()
         {
             _repository = new RepositoryBase<Account>();
+            _context = new HospitalAppDbContext();
         }
 
         public IEnumerable<DoctorDTO>? GetAllDoctors()
@@ -34,6 +36,11 @@ namespace Repositories.Repos
                 }
             }
             return res;
+        }
+
+        public IEnumerable<Account> GetDoctorWithDepartment(string department)
+        {
+            return _context.Accounts.Where(a=> a.Discriminator == "Doctor" && a.Department == department);
         }
 
         public LoginAccountDTO? Login(string username, string password)

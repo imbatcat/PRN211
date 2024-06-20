@@ -36,5 +36,16 @@ namespace Repositories.Repos
             };
             _repository.Add(toAddRequestAppointment);
         }
+
+        public void UpdateApprovedStatus(Guid appointmentRequestId)
+        {
+            bool checker = _context.AppointmentRequests.Any(a => a.appRequestId.Equals(appointmentRequestId));
+            if(checker)
+            {
+                AppointmentRequest requestApp = _repository.GetByCondition(a => a.appRequestId.Equals(appointmentRequestId));
+                requestApp.isApproved = true;
+                _repository.Save();
+            }
+        }
     }
 }

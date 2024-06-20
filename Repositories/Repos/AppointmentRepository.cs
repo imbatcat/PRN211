@@ -7,10 +7,18 @@ namespace Repositories.Repos
     {
         private readonly IRepositoryBase<Appointment> _repository;
         private readonly HospitalAppDbContext _context;
+        private readonly IRequestAppointment requestAppointment;
         public AppointmentRepository()
         {
             _context = new HospitalAppDbContext();
             _repository = new RepositoryBase<Appointment>();
+            requestAppointment = new RequestAppointmentRepository();
+        }
+
+        public void CreateAppointment(Appointment appointment)
+        {
+            _repository.Add(appointment);
+            requestAppointment.UpdateApprovedStatus(appointment.appRequestId);
         }
 
         public IEnumerable<Appointment> getAllDoctorAppointments(Guid doctorId)

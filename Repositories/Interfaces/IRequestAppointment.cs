@@ -14,5 +14,7 @@ namespace Repositories.Interfaces
     {
         public void saveRequestAppointment(AcceptedAppointmentDTO appointment);
         public IEnumerable<AppointmentRequest> GetAllAppointmentRequest();
+
+        public void UpdateApprovedStatus(Guid appointmentRequestId);
     }
 }
