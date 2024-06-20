@@ -23,7 +23,7 @@ namespace Repositories.Repos
 
         public IEnumerable<Appointment> getAllDoctorAppointments(Guid doctorId)
         {
-            return _context.Appointments.Where(a => a.AccountId.Equals(doctorId) && a.IsCheckedUp == false).OrderBy(a => a.DateCreated);
+            return _context.Appointments.Where(a => a.AccountId.Equals(doctorId) && a.IsCheckedUp == false && a.IsCancelled == false).OrderBy(a => a.DateCreated);
         }
 
         public bool UpdateCheckinStatus(string appointmentId)
