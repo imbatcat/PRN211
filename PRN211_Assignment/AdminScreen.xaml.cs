@@ -23,7 +23,7 @@ namespace PRN211_Assignment
             InitializeComponent();
             List = new AcceptedAppointmentList();
             _requestAppointmentRepository = new RequestAppointmentRepository();
-            dtgCusRequest.ItemsSource = _requestAppointmentRepository.GetAll().ToList();
+            dtgCusRequest.ItemsSource = _requestAppointmentRepository.GetAllAppointmentRequest();
         }
 
         private void dtgCusRequest_SelectionChanged(object sender, SelectionChangedEventArgs e)

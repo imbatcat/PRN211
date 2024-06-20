@@ -1,4 +1,5 @@
 ﻿using Core.Appointments;
+using Entities;
 using Repositories.Interfaces;
 using Repositories.Repos;
 using System.Windows;
@@ -28,10 +29,12 @@ namespace PRN211_Assignment
             var acc = accountRepository.Login(txtUser.Text, txtPassword.Text);
             if (acc != null)
             {
-                switch (acc.Discrimator)
+                switch (acc.Discriminator)
                 {
                     case "Doctor":
-                        //doctor window
+                        DoctorScreen window = new DoctorScreen(acc.Id);
+                        window.Show();
+                        Close();
                         break;
                     case "Admin":
                         AdminScreen Window = new AdminScreen();

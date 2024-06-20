@@ -6,16 +6,38 @@
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
         Title="DoctorScreen" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="15"
+                                RenderTransformOrigin="0.5,0.5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFDAA520"/>
+                    <Setter Property="BorderBrush" Value="#FFFFD700"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Label Content="Doctor Screen" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FF5B5B5B"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="28,44,27,173" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid x:Name="dtg_appList" ItemsSource="{Binding}" Margin="59,57,369,160" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Notes}"/>
                 <DataGridTextColumn Header="Created date" Binding="{Binding DateCreated}"/>
-                <DataGridTextColumn Header="Updated date" Binding="{Binding DateUpdated}"/>
-                <DataGridTemplateColumn Header="IsDisabled">
+                <!--<DataGridTemplateColumn Header="IsDisabled">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -29,11 +51,34 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Doctor ID" Binding="{Binding DoctorId}"/>
+                <DataGridTextColumn Header="Doctor ID" Binding="{Binding DoctorId}"/>-->
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="601,345,0,0" VerticalAlignment="Top" Height="56" Width="172" FontStyle="Italic" Click="btnSave_Click" Background="#FF006EC9" Foreground="White" FontSize="16" BorderBrush="White"/>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="46,345,0,0" VerticalAlignment="Top" Height="56" Width="172" Background="#FFE74C3C" BorderBrush="White" Foreground="White" FontSize="16" FontStyle="Italic" Click="btnLogout_Click"/>
+        
+        
+        <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Height="23" Margin="571,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" IsReadOnly="True"/>
+        <TextBox x:Name="txtSymptom" HorizontalAlignment="Left" Height="23" Margin="571,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <TextBox x:Name="txtDiagnosis" HorizontalAlignment="Left" Height="23" Margin="571,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Customer Name:" HorizontalAlignment="Left" Height="23" Margin="464,77,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Symptom:" HorizontalAlignment="Left" Height="38" Margin="464,128,0,0" VerticalAlignment="Top" Width="92"/>
+        <Label Content="Diagnosis:" HorizontalAlignment="Left" Height="34" Margin="464,171,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
+        <Button x:Name="btnSaveMed" Content="Save" HorizontalAlignment="Left" Height="28" Margin="546,255,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.5,0.5" Style="{StaticResource RoundedButtonStyle}" Click="btnSaveMed_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <GroupBox Header="Medical Record" Margin="449,46,79,115" FontStyle="Italic" FontWeight="Bold" Foreground="#FF6B6B6B" Width="272"/>
+        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="23" Margin="571,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Note:" HorizontalAlignment="Left" Height="34" Margin="464,212,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
+        <TextBox x:Name="txtAppointmentId" HorizontalAlignment="Left" Height="23" Margin="508,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Visibility="Collapsed"/>
+
+
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entities
 {
@@ -7,7 +8,7 @@ namespace Entities
         [Key]
         public Guid Id { get; set; }
 
-        public DateOnly DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
 
         public string Notes { get; set; }
 
@@ -22,6 +23,6 @@ namespace Entities
 
         public Guid appRequestId { get; set; }
         public Account Account { get; set; }
-
+        public MedicalRecord MedicalRecord { get; set; }
     }
 }

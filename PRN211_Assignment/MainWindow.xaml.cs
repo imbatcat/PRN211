@@ -37,7 +37,7 @@ namespace PRN211_Assignment
             var newAppointment = new AcceptedAppointmentDTO
             {
                 CustomerName = txtFullname.Text,
-                DateCreated = DateOnly.FromDateTime(DateTime.Now)
+                DateCreated = DateTime.Now,
             };
             //_list.Add(newAppointment);
             _requestAppointmentRepository.saveRequestAppointment(newAppointment);

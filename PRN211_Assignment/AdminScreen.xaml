@@ -8,8 +8,9 @@
         Title="AdminScreen" Height="450" Width="800">
     <Grid>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
-        <DataGrid x:Name="dtgCusRequest" Margin="165,98,359,170" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True">
+        <DataGrid x:Name="dtgCusRequest" Margin="165,98,359,170" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding appRequestId}"/>
                 <DataGridTextColumn Header="Fullname" Binding="{Binding customerName}"/>
                 <DataGridTextColumn Header="Request Date" Binding="{Binding requestDate}"/>
             </DataGrid.Columns>
@@ -20,7 +21,7 @@
         <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Margin="585,76,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="24" Background="Gainsboro"/>
         <TextBox x:Name="txtNote" HorizontalAlignment="Left" Margin="585,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="24" Background="Gainsboro"/>
         <ComboBox Name="cbbDocID" HorizontalAlignment="Left" Margin="585,192,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
-        <Label Content="Customer's name :" HorizontalAlignment="Left" Margin="462,68,0,0" VerticalAlignment="Top" Width="108" Height="26" Background="White" Foreground="#FF505050"/>
+        <Label Content="Customer's name :" HorizontalAlignment="Left" Margin="462,74,0,0" VerticalAlignment="Top" Width="108" Height="26" Background="White" Foreground="#FF505050"/>
         <Label Content="Note :" HorizontalAlignment="Left" Margin="462,116,0,0" VerticalAlignment="Top" Width="106" Height="24" Foreground="#FF505050"/>
         <Label Content="Doctor :" HorizontalAlignment="Left" Margin="462,192,0,0" VerticalAlignment="Top" Width="106" Height="23" Foreground="#FF505050"/>
         <Button x:Name="btnCreateAppointment" Content="Create" HorizontalAlignment="Left" Margin="521,244,0,0" VerticalAlignment="Top" Width="128" Height="39" Background="LightSteelBlue" Foreground="Black" BorderBrush="White" FontStyle="Italic" Click="btnCreateAppointment_Click"/>
@@ -33,6 +34,7 @@
         <Button x:Name="btn_acceptedApp" Content="Accepted appointment" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,51,0,0" Click="btn_acceptedApp_Click"/>
         <Button x:Name="btn_showDocList" Content="Doctor list" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,102,0,0" Click="btn_showDocList_Click"/>
         <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click"/>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="-59,38,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

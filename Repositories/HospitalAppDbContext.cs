@@ -10,6 +10,7 @@ namespace Repositories
         public DbSet<Appointment> Appointments { get; set; }
 
         public DbSet<AppointmentRequest> AppointmentRequests { get; set; }
+        public DbSet<MedicalRecord> MedicalRecords { get; set; }
 
         public HospitalAppDbContext() : base()
         {

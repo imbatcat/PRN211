@@ -13,9 +13,16 @@ namespace Repositories.Repos
     public class RequestAppointmentRepository : RepositoryBase<AppointmentRequest>, IRequestAppointment
     {
         private readonly IRepositoryBase<AppointmentRequest> _repository;
+        private readonly HospitalAppDbContext _context;
         public RequestAppointmentRepository()
         {
+            _context = new HospitalAppDbContext();
             _repository = new RepositoryBase<AppointmentRequest>();
+        }
+
+        public IEnumerable<AppointmentRequest> GetAllAppointmentRequest()
+        {
+            return _context.AppointmentRequests.Where(a => a.isApproved == false).OrderBy(a => a.requestDate).ToList();
         }
 
         public void saveRequestAppointment(AcceptedAppointmentDTO appointment)

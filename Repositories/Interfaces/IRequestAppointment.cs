@@ -13,5 +13,6 @@ namespace Repositories.Interfaces
     public interface IRequestAppointment : IRepositoryBase<AppointmentRequest>
     {
         public void saveRequestAppointment(AcceptedAppointmentDTO appointment);
+        public IEnumerable<AppointmentRequest> GetAllAppointmentRequest();
     }
 }

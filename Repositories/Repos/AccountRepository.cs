@@ -36,13 +36,18 @@ namespace Repositories.Repos
             return res;
         }
 
-        public AdminDTO? Login(string username, string password)
+        public LoginAccountDTO? Login(string username, string password)
         {
             var status = _repository.Any(x => x.UserName == username && x.Password == password);
             if (status)
             {
-                var acc = _repository.GetByCondition(x => x.UserName == username);
-                return new AdminDTO { Discrimator = acc.Discriminator, FullName = acc.FullName };
+                Account? acc = _repository.GetByCondition(x => x.UserName == username);
+                return new LoginAccountDTO 
+                {
+                    Discriminator = acc.Discriminator,
+                    FullName = acc.FullName,
+                    Id = acc.Id,
+                };
             }
             return null;
         }

@@ -12,7 +12,7 @@ namespace Entities
     {
         [Key]
         public Guid appRequestId { get; set; }
-        public DateOnly requestDate { get; set; }
+        public DateTime requestDate { get; set; }
 
         [Required]
         [StringLength(100)]
