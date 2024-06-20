@@ -1,0 +1,23 @@
+﻿<Window x:Class="PRN211_Assignment.UpdateAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN211_Assignment"
+        mc:Ignorable="d"
+        Title="UpdateAccount" Height="450" Width="800">
+    <Grid>
+        <Label Content="Fullname" HorizontalAlignment="Left" Margin="126,108,0,0" VerticalAlignment="Top" Height="33"/>
+        <Label Content="Date of birth" HorizontalAlignment="Left" Margin="126,170,0,0" VerticalAlignment="Top" Height="32"/>
+        <Label Content="Discriminator" HorizontalAlignment="Left" Margin="126,236,0,0" VerticalAlignment="Top" Height="33"/>
+        <TextBox x:Name="txtFullname" HorizontalAlignment="Left" Margin="289,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="318" Height="38"/>
+        <DatePicker x:Name="dprDOB" HorizontalAlignment="Left" Margin="289,167,0,0" VerticalAlignment="Top" Height="30" Width="318"/>
+        <ComboBox x:Name="cbbDiscriminator" HorizontalAlignment="Left" Margin="289,227,0,0" VerticalAlignment="Top" Width="318" Height="38">
+            <ComboBoxItem Content="Admin"/>
+            <ComboBoxItem Content="Doctor"/>
+        </ComboBox>
+        <TextBlock HorizontalAlignment="Center" Margin="0,37,0,0" TextWrapping="Wrap" Text="Update Account" VerticalAlignment="Top" Height="29" Width="144" FontWeight="Bold" FontStyle="Italic" FontSize="18"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="135,311,0,0" VerticalAlignment="Top" Height="38" Width="71" Click="btn_UpdateButton_Click"/>
+
+    </Grid>
+</Window>

@@ -1,7 +1,10 @@
 ﻿using Core;
+using Entities;
+using Repositories;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +12,7 @@ using Repositories.Interfaces;
 using Repositories.Repos;
 using System.Windows;
 using System.Windows.Controls;
+using Core.Accounts;
 
 namespace PRN211_Assignment
 {
@@ -17,11 +21,13 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class ShowDoctorList : System.Windows.Window
     {
-        private readonly IAccountRepository _accountRepository = new AccountRepository();
+        private readonly HospitalAppDbContext _context;
         public ShowDoctorList()
         {
             InitializeComponent();
-            dtgDocList.ItemsSource = _accountRepository.GetAllDoctors();
+            btnUpdate.IsEnabled = false;
+            _context = new HospitalAppDbContext();
+            LoadData();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,23 +46,19 @@ namespace PRN211_Assignment
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-
+            if (dtgDocList.SelectedItem is AccountDTO)
+            {
+                AccountDTO selectedAcc = (AccountDTO)dtgDocList.SelectedItem;
+                UpdateAccount UdA = new UpdateAccount(selectedAcc.Id);
+                UdA.Show();
+            }
+            btnUpdate.IsEnabled = false;
+            Close();
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //delete doctor
-
-            //using (var dbcontext = new db())
-            //{
-            //    Button button = sender as Button;
-            //    Doctor selected = button.CommandParameter as Doctor;
-            //    staffs.Remove(selected);
-            //    dbcontext.Doctor.Remove(selected);
-            //    dbcontext.SaveChanges();
-            //    var listUser = dbcontext.Doctor.ToList();
-            //    dgDocList.ItemsSource = listUser;
-            //}
+            btnUpdate.IsEnabled = true;
         }
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
@@ -94,6 +96,54 @@ namespace PRN211_Assignment
             AdminScreen adminScreenWindow = new AdminScreen();
             adminScreenWindow.Show();
             Close();
+        }
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button && button.CommandParameter is AccountDTO accountDTO)
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure wanting to delete this item ?", "Confirm Deletion", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    Account acc = _context.Accounts.FirstOrDefault(a => a.Id == accountDTO.Id);
+                    if (acc != null)
+                    {
+                        _context.Accounts.Remove(acc);
+                        _context.SaveChanges();
+                        refreshData();
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete fail", "Notification");
+                    }
+                }
+            }
+        }
+        public void LoadData()
+        {
+            List<Account> accounts=_context.Accounts.ToList();
+            List<AccountDTO> accountDTOs = new List<AccountDTO>();
+            foreach(Account account in accounts)
+            {
+                if (account.Discriminator == "Doctor")
+                {
+                    AccountDTO newAcc = new AccountDTO
+                    {
+                        Id = account.Id,
+                        UserName = account.UserName,
+                        FullName = account.FullName,
+                        DateOfBirth = account.DateOfBirth,
+                        Discriminator = account.Discriminator,
+                        Email = account.Email,
+                    };
+                    accountDTOs.Add(newAcc);
+                }
+            }
+            dtgDocList.ItemsSource = accountDTOs;
+        }
+        public void refreshData()
+        {
+            dtgDocList.ItemsSource = null;            
         }
     }
 }

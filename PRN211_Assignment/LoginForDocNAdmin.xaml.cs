@@ -20,12 +20,12 @@ namespace PRN211_Assignment
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            if (string.IsNullOrEmpty(txtUser.Text) || string.IsNullOrEmpty(txtPassword.Password))
             {
                 MessageBox.Show("Please enter username and password", "Error!");
                 return;
             }
-            var acc = accountRepository.Login(txtUser.Text, txtPassword.Text);
+            var acc = accountRepository.Login(txtUser.Text, txtPassword.Password);
             if (acc != null)
             {
                 switch (acc.Discrimator)

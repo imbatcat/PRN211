@@ -46,9 +46,5 @@ namespace Repositories.Repos
             }
             return null;
         }
-        public void Create(Account account)
-        {
-            _repository.Add(account);
-        }
     }
 }
