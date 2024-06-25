@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="ShowDoctorList" Height="450" Width="800">
+        Title="ShowDoctorList" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="Show doctor list" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="49" Width="187" FontSize="22" FontStyle="Italic" Foreground="#FF707070"/>
 
-        <DataGrid x:Name="dtgDocList" Margin="144,64,24,203" SelectionChanged="DataGrid_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=1}">
+        <DataGrid x:Name="dtgDocList" Margin="144,64,24,203" SelectionChanged="DataGrid_SelectionChanged" d:ItemsSource="{d:SampleData ItemCount=1}" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="Action">
                     <DataGridTemplateColumn.CellTemplate>
@@ -30,11 +30,12 @@
         <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="596,357,0,0" VerticalAlignment="Top" Height="51" Width="159" FontStyle="Italic" Click="btnCreate_Click" Background="LightSteelBlue" BorderBrush="White" Foreground="Black"/>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FFE74C3C" FontStyle="Italic" BorderBrush="White"/>
         <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="138"/>
-        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FFDDDDDD"/>
+        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FFDDDDDD" Click="btn_cusRequest_Click"/>
         <Button x:Name="btn_acceptedApp" Content="Accepted appointment" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,51,0,0" Click="btn_acceptedApp_Click"/>
         <Button x:Name="btn_showDocList" Content="Doctor list" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,102,0,0" Click="btn_showDocList_Click" Background="#FF68D2DD"/>
         <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click"/>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="715,11,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
+        <Button x:Name="btn_ViewMedicalRecord" Content="View Medical Record" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,204,0,0" Click="btn_ViewMedicalRecord_Click" Background="#FFDDDDDD"/>
 
     </Grid>
 </Window>

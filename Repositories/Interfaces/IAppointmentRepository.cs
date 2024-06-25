@@ -1,5 +1,4 @@
-﻿using Core.Appointments;
-using Entities;
+﻿using Entities;
 
 namespace Repositories.Interfaces
 {
@@ -7,7 +6,7 @@ namespace Repositories.Interfaces
     {
         public bool UpdateCheckinStatus(string appointmentId);
         public IEnumerable<Appointment> getAllDoctorAppointments(Guid doctorId);
-        public void CreateAppointment(Appointment appointment); 
+        public void CreateAppointment(Appointment appointment);
 
     }
 }

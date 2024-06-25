@@ -1,0 +1,90 @@
+﻿<Window x:Class="PRN211_Assignment.DoctorMedicalRecord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRN211_Assignment"
+        mc:Ignorable="d"
+        Title="DoctorMedicalRecord" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="15"
+                            RenderTransformOrigin="0.5,0.5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFDAA520"/>
+                    <Setter Property="BorderBrush" Value="#FFFFD700"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="dtg_MedList" ItemsSource="{Binding}" Margin="59,57,369,160" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
+                <DataGridTextColumn Header="Symptoms" Binding="{Binding Symptoms}"/>
+                <DataGridTextColumn Header="Diagnosis" Binding="{Binding Diagnosis}"/>
+                <DataGridTextColumn Header="Note" Binding="{Binding Note}"/>
+                <!--<DataGridTemplateColumn Header="IsDisabled">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="IsCancelled">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding IsCancelled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Doctor ID" Binding="{Binding DoctorId}"/>-->
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Header="Medical Record" Margin="479,57,49,104" FontStyle="Italic" FontWeight="Bold" Foreground="#FF6B6B6B" Width="272"/>
+        <TextBox x:Name="txtDiagnosis" HorizontalAlignment="Left" Height="23" Margin="571,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Button x:Name="btn_back" Content="Back" HorizontalAlignment="Left" Height="49" Margin="59,357,0,0" VerticalAlignment="Top" Width="123" Background="#FF006EC9" Click="btn_back_Click"/>
+        <TextBox x:Name="txtSymptoms" HorizontalAlignment="Left" Height="24" Margin="571,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Diagnosis:" HorizontalAlignment="Left" Height="34" Margin="495,190,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
+        <Label Content="Symptoms:" HorizontalAlignment="Left" Height="34" Margin="495,144,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Height="34" Margin="495,98,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="24" Margin="571,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Label Content="Note:" HorizontalAlignment="Left" Height="34" Margin="495,228,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
+        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="23" Margin="571,233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
+        <Button x:Name="btnUpdateMed" Content="Update" HorizontalAlignment="Left" Height="28" Margin="537,290,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.5,0.5" Style="{StaticResource RoundedButtonStyle}" Click="btnUpdateMed_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btnDelMed" Content="Delete" HorizontalAlignment="Left" Height="28" Margin="629,290,0,0" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.5,0.5" Style="{StaticResource RoundedButtonStyle}" Click="btnDeleteMed_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="txtMedId" HorizontalAlignment="Left" Height="23" Margin="495,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="55" Visibility="Collapsed"/>
+
+    </Grid>
+</Window>

@@ -64,9 +64,7 @@ namespace PRN211_Assignment
 
         private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
         {
-            AcceptedAppointment acceptedAppointmentWindow = new AcceptedAppointment();
-            acceptedAppointmentWindow.Show();
-            Close();
+
         }
 
         private void btn_showDocList_Click(object sender, RoutedEventArgs e)
@@ -87,6 +85,13 @@ namespace PRN211_Assignment
         {
             AdminScreen adminScreenWindow = new AdminScreen();
             adminScreenWindow.Show();
+            Close();
+        }
+
+        private void btn_ViewMedicalRecord_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMedicalRecord adminMedicalRecord = new AdminMedicalRecord();
+            adminMedicalRecord.Show();
             Close();
         }
     }

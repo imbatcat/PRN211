@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="UpdateAppointment" Height="450" Width="800">
+        Title="UpdateAppointment" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="720,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="10" Foreground="Red"/>
         <Label Content="Update appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" FontStyle="Italic" BorderBrush="Black" Foreground="#FF7D7D7D"/>

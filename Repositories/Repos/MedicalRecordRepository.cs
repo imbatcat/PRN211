@@ -1,14 +1,10 @@
 ﻿using Entities;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories.Repos
 {
-    public class MedicalRecordRepository: RepositoryBase<MedicalRecord>, IMedicalRecordRepository
+    public class MedicalRecordRepository : RepositoryBase<MedicalRecord>, IMedicalRecordRepository
     {
         private readonly HospitalAppDbContext _context;
         public readonly IRepositoryBase<MedicalRecord> Repository;
@@ -16,6 +12,11 @@ namespace Repositories.Repos
         {
             Repository = new RepositoryBase<MedicalRecord>();
             _context = new HospitalAppDbContext();
+        }
+
+        public IEnumerable<MedicalRecord> GetAllMedicalRecordsByDocId(Guid doctorId)
+        {
+            return _context.MedicalRecords.Include("appointment").Where(m => m.appointment.AccountId.Equals(doctorId)).ToList();
         }
     }
 }

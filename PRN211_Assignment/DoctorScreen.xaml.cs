@@ -1,5 +1,4 @@
 ﻿using Entities;
-using Microsoft.Identity.Client;
 using Repositories.Repos;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -28,7 +27,7 @@ namespace PRN211_Assignment
         }
 
 
-        
+
         public DoctorScreen(Guid doctorId)
         {
             InitializeComponent();
@@ -37,7 +36,7 @@ namespace PRN211_Assignment
             _medicalRecord = new MedicalRecordRepository();
             btnSaveMed.IsEnabled = false;
             LoadData();
- 
+
         }
 
         public void LoadData()
@@ -60,7 +59,7 @@ namespace PRN211_Assignment
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(dtg_appList.SelectedItem is Appointment selectedAppointment)
+            if (dtg_appList.SelectedItem is Appointment selectedAppointment)
             {
                 ResetData();
                 txtCusName.Text = selectedAppointment.CustomerName;
@@ -94,25 +93,28 @@ namespace PRN211_Assignment
                         Diagnosis = diagnosis,
                         Symptoms = symptoms,
                         Note = note
-                       
+
                     };
-                    if(_appointmentRepository.UpdateCheckinStatus(txtAppointmentId.Text))
+                    if (_appointmentRepository.UpdateCheckinStatus(txtAppointmentId.Text))
                     {
                         _medicalRecord.Add(medicalRecord);
                         ResetData();
                         RefreshDatagrid();
                         MessageBox.Show("Save successfully", "Notification", MessageBoxButton.OK, MessageBoxImage.Information);
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("Save failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Please fill all the field", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("There is an error occured", "Error",MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("There is an error occured", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -123,6 +125,13 @@ namespace PRN211_Assignment
             txtNote.Clear();
             txtDiagnosis.Clear();
             txtCusName.Clear();
+        }
+
+        private void btn_MedicalRecordList_Click(object sender, RoutedEventArgs e)
+        {
+            DoctorMedicalRecord doctorMedicalRecordWindow = new DoctorMedicalRecord(DoctorId);
+            doctorMedicalRecordWindow.Show();
+            Close();
         }
     }
 }

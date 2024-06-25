@@ -1,5 +1,4 @@
 ﻿using Core.Appointments;
-using Entities;
 using Repositories.Interfaces;
 using Repositories.Repos;
 using System.Windows;

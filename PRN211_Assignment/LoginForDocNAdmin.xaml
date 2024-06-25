@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="LoginForDocNAdmin" Height="450" Width="800">
+        Title="LoginForDocNAdmin" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="Login for Doctor and Admin" HorizontalAlignment="Left" Margin="278,49,0,0" VerticalAlignment="Top" Height="33" Width="224" FontSize="16" FontWeight="Bold" FontStyle="Italic" Foreground="#FF505050"/>
         <Label Content="User" HorizontalAlignment="Left" Margin="257,110,0,0" VerticalAlignment="Top" Width="90"/>

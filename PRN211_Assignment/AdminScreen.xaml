@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="AdminScreen" Height="450" Width="800">
+        Title="AdminScreen" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
         <DataGrid x:Name="dtgCusRequest" Margin="165,98,359,170" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True" AutoGenerateColumns="False">
@@ -35,6 +35,7 @@
         <Button x:Name="btn_showDocList" Content="Doctor list" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,102,0,0" Click="btn_showDocList_Click"/>
         <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click"/>
         <TextBox x:Name="txtAppRequestId" HorizontalAlignment="Left" Height="19" Margin="462,220,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="36" Visibility="Collapsed"/>
+        <Button x:Name="btn_ViewMedicalRecord" Content="View Medical Record" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,204,0,0" Click="btn_ViewMedicalRecord_Click" Background="#FFDDDDDD"/>
 
     </Grid>
 </Window>

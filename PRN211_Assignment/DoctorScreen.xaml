@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="DoctorScreen" Height="450" Width="800">
+        Title="DoctorScreen" Height="450" Width="800" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="RoundedButtonStyle" TargetType="Button">
             <Setter Property="Template">
@@ -56,8 +56,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="46,345,0,0" VerticalAlignment="Top" Height="56" Width="172" Background="#FFE74C3C" BorderBrush="White" Foreground="White" FontSize="16" FontStyle="Italic" Click="btnLogout_Click"/>
-        
-        
+
+
         <TextBox x:Name="txtCusName" HorizontalAlignment="Left" Height="23" Margin="571,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" IsReadOnly="True"/>
         <TextBox x:Name="txtSymptom" HorizontalAlignment="Left" Height="23" Margin="571,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
         <TextBox x:Name="txtDiagnosis" HorizontalAlignment="Left" Height="23" Margin="571,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
@@ -78,6 +78,7 @@
         <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="23" Margin="571,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
         <Label Content="Note:" HorizontalAlignment="Left" Height="34" Margin="464,212,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
         <TextBox x:Name="txtAppointmentId" HorizontalAlignment="Left" Height="23" Margin="508,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Visibility="Collapsed"/>
+        <Button x:Name="btn_MedicalRecordList" Content="Medical Record list" HorizontalAlignment="Left" Margin="365,345,0,0" VerticalAlignment="Top" Height="56" Width="172" Background="#FFE74C3C" BorderBrush="White" Foreground="White" FontSize="16" FontStyle="Italic" Click="btn_MedicalRecordList_Click"/>
 
 
     </Grid>

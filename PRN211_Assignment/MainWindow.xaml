@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="Register for appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold" FontStyle="Italic" FontSize="22" Foreground="#FF707070" Height="40"/>
         <Label Content="Enter your Fullname for registering an appointment" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top" Width="296" Foreground="#FF707070"/>

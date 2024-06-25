@@ -1,12 +1,6 @@
-﻿using Core;
-using Core.Appointments;
+﻿using Core.Appointments;
 using Entities;
 using Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories.Repos
 {
@@ -40,7 +34,7 @@ namespace Repositories.Repos
         public void UpdateApprovedStatus(Guid appointmentRequestId)
         {
             bool checker = _context.AppointmentRequests.Any(a => a.appRequestId.Equals(appointmentRequestId));
-            if(checker)
+            if (checker)
             {
                 AppointmentRequest requestApp = _repository.GetByCondition(a => a.appRequestId.Equals(appointmentRequestId));
                 requestApp.isApproved = true;

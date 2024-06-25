@@ -1,12 +1,6 @@
-﻿using Core.Appointments;
-using Entities;
+﻿using Entities;
 using Microsoft.IdentityModel.Tokens;
-using Repositories;
 using Repositories.Repos;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -21,7 +15,7 @@ namespace PRN211_Assignment
         private AppointmentRepository appointmentRepository;
         public List<AppointmentRequest> appointmentRequestList;
         public readonly AccountRepository accountRepository;
-        
+
         public AdminScreen()
         {
             accountRepository = new AccountRepository();
@@ -73,7 +67,7 @@ namespace PRN211_Assignment
             txtCusName.Clear();
             txtNote.Clear();
             cbbDepartment.SelectedItem = null;
-            cbbDocID.ItemsSource= null;
+            cbbDocID.ItemsSource = null;
         }
         private void dtgCusRequest_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -94,7 +88,7 @@ namespace PRN211_Assignment
             //    dtgCusRequest.ItemsSource = listRe;
             //}
 
-            if(dtgCusRequest.SelectedItem is AppointmentRequest selectedReq)
+            if (dtgCusRequest.SelectedItem is AppointmentRequest selectedReq)
             {
                 ClearBox();
                 btnCreateAppointment.IsEnabled = true;
@@ -147,15 +141,16 @@ namespace PRN211_Assignment
             //}
             try
             {
-                if(txtAppRequestId.Text.IsNullOrEmpty() || txtCusName.Text.IsNullOrEmpty())
+                if (txtAppRequestId.Text.IsNullOrEmpty() || txtCusName.Text.IsNullOrEmpty())
                 {
                     throw new Exception("Internal error");
-                } else if(cbbDepartment.SelectedItem == null || cbbDocID.SelectedItem == null)
+                }
+                else if (cbbDepartment.SelectedItem == null || cbbDocID.SelectedItem == null)
                 {
                     throw new Exception("Empty field");
                 }
-                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure want to create this appointment","Notification", MessageBoxButton.OKCancel, MessageBoxImage.Question);
-                if(messageBoxResult == MessageBoxResult.OK)
+                MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure want to create this appointment", "Notification", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                if (messageBoxResult == MessageBoxResult.OK)
                 {
                     appointmentRepository.CreateAppointment(new Appointment
                     {
@@ -175,19 +170,22 @@ namespace PRN211_Assignment
                     btnCreateAppointment.IsEnabled = false; //disable button when don't use
                 }
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                if(ex.Message == "Empty field")
+                if (ex.Message == "Empty field")
                 {
                     MessageBox.Show("Please fill all the field", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                } else if(ex.Message == "Internal error")
+                }
+                else if (ex.Message == "Internal error")
                 {
                     MessageBox.Show("Internal error", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                } else
+                }
+                else
                 {
                     MessageBox.Show("Department can't be null", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                
+
             }
         }
 
@@ -216,16 +214,23 @@ namespace PRN211_Assignment
         {
             try
             {
-                if(cbbDepartment.SelectedItem != null)
+                if (cbbDepartment.SelectedItem != null)
                 {
                     LoadDoctorListCbb(cbbDepartment.SelectedItem.ToString());
                 }
-                
+
             }
             catch (NullReferenceException)
             {
                 Console.WriteLine("Continue");
             }
+        }
+
+        private void btn_ViewMedicalRecord_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMedicalRecord adminMedicalRecord = new AdminMedicalRecord();
+            adminMedicalRecord.Show();
+            Close ();
         }
 
         //private void btnShowDoctorList(object sender, RoutedEventArgs e)

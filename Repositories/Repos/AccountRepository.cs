@@ -1,7 +1,6 @@
 ﻿using Core.Accounts;
 using Entities;
 using Repositories.Interfaces;
-using System.Runtime.CompilerServices;
 
 namespace Repositories.Repos
 {
@@ -40,7 +39,7 @@ namespace Repositories.Repos
 
         public IEnumerable<Account> GetDoctorWithDepartment(string department)
         {
-            return _context.Accounts.Where(a=> a.Discriminator == "Doctor" && a.Department == department);
+            return _context.Accounts.Where(a => a.Discriminator == "Doctor" && a.Department == department);
         }
 
         public LoginAccountDTO? Login(string username, string password)
@@ -49,7 +48,7 @@ namespace Repositories.Repos
             if (status)
             {
                 Account? acc = _repository.GetByCondition(x => x.UserName == username);
-                return new LoginAccountDTO 
+                return new LoginAccountDTO
                 {
                     Discriminator = acc.Discriminator,
                     FullName = acc.FullName,

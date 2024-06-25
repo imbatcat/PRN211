@@ -1,18 +1,8 @@
-﻿using Core;
+﻿using Core.Accounts;
 using Entities;
 using Repositories;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Repositories.Interfaces;
-using Repositories.Repos;
 using System.Windows;
 using System.Windows.Controls;
-using Core.Accounts;
 
 namespace PRN211_Assignment
 {
@@ -121,9 +111,9 @@ namespace PRN211_Assignment
         }
         public void LoadData()
         {
-            List<Account> accounts=_context.Accounts.ToList();
+            List<Account> accounts = _context.Accounts.ToList();
             List<AccountDTO> accountDTOs = new List<AccountDTO>();
-            foreach(Account account in accounts)
+            foreach (Account account in accounts)
             {
                 if (account.Discriminator == "Doctor")
                 {
@@ -143,7 +133,14 @@ namespace PRN211_Assignment
         }
         public void refreshData()
         {
-            dtgDocList.ItemsSource = null;            
+            dtgDocList.ItemsSource = null;
+        }
+
+        private void btn_ViewMedicalRecord_Click(object sender, RoutedEventArgs e)
+        {
+            AdminMedicalRecord adminMedicalRecord = new AdminMedicalRecord();
+            adminMedicalRecord.Show();
+            Close();
         }
     }
 }

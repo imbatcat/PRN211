@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="UpdateAccount" Height="450" Width="800">
+        Title="UpdateAccount" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="Fullname" HorizontalAlignment="Left" Margin="126,108,0,0" VerticalAlignment="Top" Height="33"/>
         <Label Content="Date of birth" HorizontalAlignment="Left" Margin="126,170,0,0" VerticalAlignment="Top" Height="32"/>

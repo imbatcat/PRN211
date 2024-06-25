@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PRN211_Assignment"
         mc:Ignorable="d"
-        Title="CreateAccount" Height="450" Width="800">
+        Title="CreateAccount" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="411,24,0,0" TextWrapping="Wrap" Text="Create Account" VerticalAlignment="Top" Height="29" Width="136" FontWeight="Bold" FontStyle="Italic" FontSize="18"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="208,54,0,0" VerticalAlignment="Top"/>
@@ -20,28 +20,23 @@
         <PasswordBox x:Name="passWordbox" HorizontalAlignment="Left" Margin="301,101,0,0" VerticalAlignment="Top" Width="140" Height="30"/>
         <TextBox x:Name="txtFullname" HorizontalAlignment="Left" Margin="301,149,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Height="30"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="591,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Height="30" RenderTransformOrigin="0.517,0.581"/>
-        <DatePicker x:Name="dprDOB" HorizontalAlignment="Left" Margin="301,200,0,0" VerticalAlignment="Top" Height="24" Width="140"/>
-        <ComboBox x:Name="cbbDiscriminator" HorizontalAlignment="Left" Margin="301,253,0,0" VerticalAlignment="Top" Width="140" Height="31">
-            <ComboBoxItem Content="Admin"/>
-            <ComboBoxItem Content="Doctor"/>
-        </ComboBox>
-        <ComboBox x:Name="cbbGender" HorizontalAlignment="Left" Margin="301,308,0,0" VerticalAlignment="Top" Width="140" Height="31">
-            <ComboBoxItem Content="Male"/>
-            <ComboBoxItem Content="Female"/>
-        </ComboBox>
-        <ComboBox x:Name="cbbDepartment" HorizontalAlignment="Left" Margin="591,59,0,0" VerticalAlignment="Top" Width="140" Height="31">
-            <ComboBoxItem Content="Surgery"/>
-            <ComboBoxItem Content="Orthopedic"/>
-            <ComboBoxItem Content="Cardiology"/>
-        </ComboBox>
+        <DatePicker x:Name="dprDOB" HorizontalAlignment="Left" Margin="301,200,0,0" VerticalAlignment="Top" Height="24" Width="140" Text="as" PreviewTextInput="dprDOB_PreviewTextInput"/>
+        <ComboBox x:Name="cbbDiscriminator" HorizontalAlignment="Left" Margin="301,253,0,0" VerticalAlignment="Top" Width="140" Height="31" SelectionChanged="cbbDiscriminator_SelectionChanged"/>
+
+        <ComboBox x:Name="cbbGender" HorizontalAlignment="Left" Margin="301,308,0,0" VerticalAlignment="Top" Width="140" Height="31"/>
+
+        <ComboBox x:Name="cbbDepartment" HorizontalAlignment="Left" Margin="591,59,0,0" VerticalAlignment="Top" Width="140" Height="31"/>
+
+
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="522,300,0,0" VerticalAlignment="Top" Height="39" Width="209" FontStyle="Italic" FontSize="14" Click="btnSave_Click" Background="#FF006EC9" BorderBrush="White" Foreground="White"/>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FFE74C3C" FontStyle="Italic" BorderBrush="White"/>
         <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="138"/>
-        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FFDDDDDD"/>
+        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FFDDDDDD" Click="btn_cusRequest_Click"/>
         <Button x:Name="btn_acceptedApp" Content="Accepted appointment" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,51,0,0" Click="btn_acceptedApp_Click"/>
         <Button x:Name="btn_showDocList" Content="Doctor list" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,102,0,0" Click="btn_showDocList_Click"/>
         <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click" Background="#FF68D2DD"/>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="715,11,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
+        <Button x:Name="btn_ViewMedicalRecord" Content="View Medical Record" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,204,0,0" Click="btn_ViewMedicalRecord_Click" Background="#FFDDDDDD"/>
 
 
     </Grid>
