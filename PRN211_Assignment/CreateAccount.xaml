@@ -37,10 +37,10 @@
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="522,300,0,0" VerticalAlignment="Top" Height="39" Width="209" FontStyle="Italic" FontSize="14" Click="btnSave_Click" Background="#FF006EC9" BorderBrush="White" Foreground="White"/>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FFE74C3C" FontStyle="Italic" BorderBrush="White"/>
         <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="138"/>
-        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FF68D2DD"/>
+        <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FFDDDDDD"/>
         <Button x:Name="btn_acceptedApp" Content="Accepted appointment" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,51,0,0" Click="btn_acceptedApp_Click"/>
         <Button x:Name="btn_showDocList" Content="Doctor list" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,102,0,0" Click="btn_showDocList_Click"/>
-        <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click"/>
+        <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click" Background="#FF68D2DD"/>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="715,11,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
 
 
