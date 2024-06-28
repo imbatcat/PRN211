@@ -29,7 +29,7 @@
 
 
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="522,300,0,0" VerticalAlignment="Top" Height="39" Width="209" FontStyle="Italic" FontSize="14" Click="btnSave_Click" Background="#FF006EC9" BorderBrush="White" Foreground="White"/>
-        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FFE74C3C" FontStyle="Italic" BorderBrush="White"/>
+        <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FF006EC9" BorderBrush="White"/>
         <Rectangle HorizontalAlignment="Left" Height="434" Stroke="Black" VerticalAlignment="Center" Width="138"/>
         <Button x:Name="btn_cusRequest" Content="Customer request" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Background="#FFDDDDDD" Click="btn_cusRequest_Click"/>
         <Button x:Name="btn_acceptedApp" Content="Accepted appointment" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="138" Margin="0,51,0,0" Click="btn_acceptedApp_Click"/>

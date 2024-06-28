@@ -10,7 +10,7 @@
         <Label Content="Register for appointment" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="280" FontWeight="Bold" FontStyle="Italic" FontSize="22" Foreground="#FF707070" Height="40"/>
         <Label Content="Enter your Fullname for registering an appointment" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top" Width="296" Foreground="#FF707070"/>
         <TextBox x:Name="txtFullname" HorizontalAlignment="Center" Margin="0,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="280" Height="29" BorderBrush="#FF939393" Foreground="#FF9D9D9D" Background="#FFE5E5E5"/>
-        <Button x:Name="btnDocLogin" Content="Login for doctor or admin"  HorizontalAlignment="Left" Margin="606,348,0,0" VerticalAlignment="Top" Height="61" Width="170" Click="btnDocLogin_Click" Background="#FF006EC9" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="btnDocLogin" Content="Login for doctor or admin"  HorizontalAlignment="Left" Margin="606,348,0,0" VerticalAlignment="Top" Height="47" Width="170" Click="btnDocLogin_Click" Background="#FF006EC9" BorderBrush="White" Foreground="White" FontWeight="Bold"/>
         <Button x:Name="btnRegister" Content="Register" HorizontalAlignment="Center" Margin="0,235,0,0" VerticalAlignment="Top" Height="47" Width="154" FontWeight="Bold" Click="Button_Click" BorderBrush="White" Foreground="White" Background="#FF006EC9"/>
         <Label HorizontalAlignment="Left" Margin="115,280,0,0" VerticalAlignment="Top" Width="181" Height="51"/>
 

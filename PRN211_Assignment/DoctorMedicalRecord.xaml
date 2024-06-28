@@ -56,7 +56,7 @@
         </DataGrid>
         <GroupBox Header="Medical Record" Margin="479,57,49,104" FontStyle="Italic" FontWeight="Bold" Foreground="#FF6B6B6B" Width="272"/>
         <TextBox x:Name="txtDiagnosis" HorizontalAlignment="Left" Height="23" Margin="571,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
-        <Button x:Name="btn_back" Content="Back" HorizontalAlignment="Left" Height="49" Margin="59,357,0,0" VerticalAlignment="Top" Width="123" Background="#FF006EC9" Click="btn_back_Click"/>
+        <Button x:Name="btn_back" Content="Back" HorizontalAlignment="Left" Height="49" Margin="59,357,0,0" VerticalAlignment="Top" Width="123" Background="#FF006EC9" Click="btn_back_Click" Foreground="#FFF4EFEF"/>
         <TextBox x:Name="txtSymptoms" HorizontalAlignment="Left" Height="24" Margin="571,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116"/>
         <Label Content="Diagnosis:" HorizontalAlignment="Left" Height="34" Margin="495,190,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
         <Label Content="Symptoms:" HorizontalAlignment="Left" Height="34" Margin="495,144,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>

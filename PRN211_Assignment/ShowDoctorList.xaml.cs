@@ -15,7 +15,6 @@ namespace PRN211_Assignment
         public ShowDoctorList()
         {
             InitializeComponent();
-            btnUpdate.IsEnabled = false;
             _context = new HospitalAppDbContext();
             LoadData();
         }
@@ -42,18 +41,7 @@ namespace PRN211_Assignment
                 UpdateAccount UdA = new UpdateAccount(selectedAcc.Id);
                 UdA.Show();
             }
-            btnUpdate.IsEnabled = false;
             Close();
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            btnUpdate.IsEnabled = true;
-        }
-
-        private void btnCreate_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -125,6 +113,7 @@ namespace PRN211_Assignment
                         DateOfBirth = account.DateOfBirth,
                         Discriminator = account.Discriminator,
                         Email = account.Email,
+                        Password = account.Password,
                     };
                     accountDTOs.Add(newAcc);
                 }

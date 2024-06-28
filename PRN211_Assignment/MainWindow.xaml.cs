@@ -41,7 +41,7 @@ namespace PRN211_Assignment
             };
             //_list.Add(newAppointment);
             _requestAppointmentRepository.saveRequestAppointment(newAppointment);
-
+            txtFullname.Clear();
             MessageBox.Show("Register appointment Successfully !!!", "caption", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
