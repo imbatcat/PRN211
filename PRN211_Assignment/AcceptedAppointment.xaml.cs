@@ -1,4 +1,5 @@
-﻿using Repositories.Interfaces;
+﻿using Entities;
+using Repositories.Interfaces;
 using Repositories.Repos;
 using System.ComponentModel;
 using System.Windows;
@@ -15,12 +16,7 @@ namespace PRN211_Assignment
         {
             InitializeComponent();
             dtgAccepted.ItemsSource = _appointmentRepository.GetAll();
-            //load datagrid
-            //using (var dbcontext = new db())
-            //{
-            //    var listRequest = dbcontext.Appointment.ToList();
-            //    dtgCusRequest.ItemsSource = listRequest;
-            //}
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -64,7 +60,8 @@ namespace PRN211_Assignment
 
         private void btn_acceptedApp_Click(object sender, RoutedEventArgs e)
         {
-
+            dtgAccepted.ItemsSource = null;
+            dtgAccepted.ItemsSource = _appointmentRepository.GetAll();
         }
 
         private void btn_showDocList_Click(object sender, RoutedEventArgs e)
@@ -93,6 +90,13 @@ namespace PRN211_Assignment
             AdminMedicalRecord adminMedicalRecord = new AdminMedicalRecord();
             adminMedicalRecord.Show();
             Close();
+        }
+
+        private void btn_SearchName(object sender, RoutedEventArgs e)
+        {
+            List<Appointment> appointment=_appointmentRepository.getCustomerByName(txtNameSearch.Text).ToList();
+            dtgAccepted.ItemsSource=null;
+            dtgAccepted.ItemsSource = appointment;
         }
     }
 }

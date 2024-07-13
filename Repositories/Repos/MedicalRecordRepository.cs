@@ -18,5 +18,10 @@ namespace Repositories.Repos
         {
             return _context.MedicalRecords.Include("appointment").Where(m => m.appointment.AccountId.Equals(doctorId)).ToList();
         }
+
+        public IEnumerable<MedicalRecord> GetMedicalRecordsByCustomerName(string customerName)
+        {
+            return _context.MedicalRecords.Where(a => a.CustomerName.Equals(customerName));
+        }
     }
 }

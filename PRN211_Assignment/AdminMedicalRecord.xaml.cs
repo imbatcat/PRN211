@@ -85,5 +85,11 @@ namespace PRN211_Assignment
             adminMedicalRecord.Show();
             Close();
         }
+
+        private void btn_NameSearch(object sender, RoutedEventArgs e)
+        {
+            List<MedicalRecord> medicalRecords = medicalRecordRepository.GetMedicalRecordsByCustomerName(txtNameSearch.Text).ToList();
+            dtg_MedList.ItemsSource = null;
+            dtg_MedList.ItemsSource = medicalRecords;
+        }
     }
-}

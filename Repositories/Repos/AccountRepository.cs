@@ -1,6 +1,8 @@
 ﻿using Core.Accounts;
 using Entities;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Interfaces;
+using System.Linq.Expressions;
 
 namespace Repositories.Repos
 {
@@ -35,6 +37,11 @@ namespace Repositories.Repos
                 }
             }
             return res;
+        }
+        
+        public IEnumerable<Account> GetDocByCondition(string docName)
+        {
+            return _context.Accounts.Where(a => a.FullName == docName && a.Discriminator == "Doctor");
         }
 
         public IEnumerable<Account> GetDoctorWithDepartment(string department)

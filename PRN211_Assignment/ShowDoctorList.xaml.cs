@@ -1,6 +1,7 @@
 ﻿using Core.Accounts;
 using Entities;
 using Repositories;
+using Repositories.Repos;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -12,10 +13,12 @@ namespace PRN211_Assignment
     public partial class ShowDoctorList : System.Windows.Window
     {
         private readonly HospitalAppDbContext _context;
+        private readonly AccountRepository accountRepository;
         public ShowDoctorList()
         {
             InitializeComponent();
             _context = new HospitalAppDbContext();
+            accountRepository = new AccountRepository();
             LoadData();
         }
 
@@ -60,6 +63,7 @@ namespace PRN211_Assignment
 
         private void btn_showDocList_Click(object sender, RoutedEventArgs e)
         {
+            LoadData();
         }
 
         private void btn_CreateAccount_Click(object sender, RoutedEventArgs e)
@@ -130,6 +134,12 @@ namespace PRN211_Assignment
             AdminMedicalRecord adminMedicalRecord = new AdminMedicalRecord();
             adminMedicalRecord.Show();
             Close();
+        }
+        private void btn_SearchByDoctorName(object sender, RoutedEventArgs e)
+        {
+            List<Account> acc = accountRepository.GetDocByCondition(txtSearchByName.Text).ToList();
+            dtgDocList.ItemsSource = null;
+            dtgDocList.ItemsSource = acc;
         }
     }
 }

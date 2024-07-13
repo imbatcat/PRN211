@@ -7,6 +7,6 @@ namespace Repositories.Interfaces
         public bool UpdateCheckinStatus(string appointmentId);
         public IEnumerable<Appointment> getAllDoctorAppointments(Guid doctorId);
         public void CreateAppointment(Appointment appointment);
-
+        public IEnumerable<Appointment> getCustomerByName(string name);
     }
 }

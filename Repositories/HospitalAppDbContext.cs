@@ -11,10 +11,11 @@ namespace Repositories
 
         public DbSet<AppointmentRequest> AppointmentRequests { get; set; }
         public DbSet<MedicalRecord> MedicalRecords { get; set; }
+        public object Account { get; internal set; }
 
         public HospitalAppDbContext() : base()
         {
-            Database.EnsureCreated();
+            Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
