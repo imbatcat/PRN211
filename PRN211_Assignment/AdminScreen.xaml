@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AdminScreen" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="726,10,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
+        <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="701,15,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red" RenderTransformOrigin="-0.433,0.912"/>
         <DataGrid x:Name="dtgCusRequest" Margin="165,98,359,170" ItemsSource="{Binding List}" SelectionChanged="dtgCusRequest_SelectionChanged" Background="#FFE5E5E5" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fullname" Binding="{Binding customerName}"/>
