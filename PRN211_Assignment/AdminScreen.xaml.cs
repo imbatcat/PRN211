@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Microsoft.IdentityModel.Tokens;
+using Repositories;
 using Repositories.Repos;
 using System.Windows;
 using System.Windows.Controls;
@@ -203,6 +204,13 @@ namespace PRN211_Assignment
             AdminMedicalRecord adminMedicalRecord = new AdminMedicalRecord();
             adminMedicalRecord.Show();
             Close ();
+        }
+        private void btn_SearchName(object sender, RoutedEventArgs e)
+        {
+            HospitalAppDbContext hospitalAppDbContext = new HospitalAppDbContext();
+            dtgCusRequest.ItemsSource = null;
+            dtgCusRequest.ItemsSource = hospitalAppDbContext.AppointmentRequests.Where(a => a.customerName.ToLower().Contains(txtSearchName.Text.ToLower()) && a.isApproved == false).ToList();
+
         }
 
         //private void btnShowDoctorList(object sender, RoutedEventArgs e)

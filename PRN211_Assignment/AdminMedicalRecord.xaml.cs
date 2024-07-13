@@ -94,3 +94,4 @@ namespace PRN211_Assignment
             dtg_MedList.ItemsSource = medicalRecords;
         }
     }
+}
