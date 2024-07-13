@@ -26,6 +26,11 @@ namespace Repositories.Repos
             return _context.Appointments.Where(a => a.AccountId.Equals(doctorId) && a.IsCheckedUp == false && a.IsCancelled == false).OrderBy(a => a.DateCreated);
         }
 
+        public IEnumerable<Appointment> getCustomerByName(string name)
+        {
+            return _context.Appointments.Where(a=>a.CustomerName.Equals(name));
+        }
+
         public bool UpdateCheckinStatus(string appointmentId)
         {
             var appointment = _context.Appointments.FirstOrDefault(a => a.Id == Guid.Parse(appointmentId));

@@ -87,11 +87,10 @@ namespace PRN211_Assignment
             Close();
         }
 
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        private void btn_NameSearch(object sender, RoutedEventArgs e)
         {
-            HospitalAppDbContext con = new HospitalAppDbContext();
+            List<MedicalRecord> medicalRecords = medicalRecordRepository.GetMedicalRecordsByCustomerName(txtNameSearch.Text).ToList();
             dtg_MedList.ItemsSource = null;
-            dtg_MedList.ItemsSource = con.MedicalRecords.Where(x => x.CustomerName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
+            dtg_MedList.ItemsSource = medicalRecords;
         }
     }
-}

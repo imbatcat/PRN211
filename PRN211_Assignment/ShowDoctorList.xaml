@@ -18,7 +18,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                    <!--<DataGridTextColumn Header="User Name" Binding="{Binding UserName}"/>
+                <!--<DataGridTextColumn Header="User Name" Binding="{Binding UserName}"/>
                     <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}"/>
                     <DataGridTextColumn Header="Discriminator" Binding="{Binding Discriminator}"/>
                     <DataGridTextColumn Header="Date of birth" Binding="{Binding DateOfBirth}"/>
@@ -34,6 +34,8 @@
         <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click"/>
         <Label Content="Admin Screen" HorizontalAlignment="Left" Margin="715,11,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="9" Foreground="Red"/>
         <Button x:Name="btn_ViewMedicalRecord" Content="View Medical Record" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,204,0,0" Click="btn_ViewMedicalRecord_Click" Background="#FFDDDDDD"/>
+        <Button Content="Search by doctor's name" HorizontalAlignment="Left" Margin="178,318,0,0" VerticalAlignment="Top" Height="26" Width="142" Click="btn_SearchByDoctorName"/>
+        <TextBox x:Name="txtSearchByName" HorizontalAlignment="Left" Margin="338,318,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="183" Height="26"/>
 
     </Grid>
 </Window>

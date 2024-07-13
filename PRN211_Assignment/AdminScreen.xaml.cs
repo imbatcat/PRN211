@@ -110,35 +110,7 @@ namespace PRN211_Assignment
         }
 
         private void btnCreateAppointment_Click(object sender, RoutedEventArgs e)
-        {
-            //var cus = txtCusName.Text;
-            //if (string.IsNullOrWhiteSpace(cus))
-            //{
-            //    MessageBox.Show("Customer's name cannot be empty.");
-            //    return;
-            //}
-            //var note = txtNote.Text;
-
-
-            //if (cbbIsCheckedUp.SelectedItem != null)
-            //{
-            //    string selectedValue = cbbIsCheckedUp.SelectedItem.ToString();
-            //    if (selectedValue.Equals("Yes"))
-            //    {
-            //        check = true;
-            //    }
-            //    else check = false;
-            //}
-
-            //if (cbbIsCancelled.SelectedItem != null)
-            //{
-            //    string selectedValue = cbbIsCancelled.SelectedItem.ToString();
-            //    if (selectedValue.Equals("Yes"))
-            //    {
-            //        cancel = true;
-            //    }
-            //    else cancel = false;
-            //}
+        {            
             try
             {
                 if (txtAppRequestId.Text.IsNullOrEmpty() || txtCusName.Text.IsNullOrEmpty())
