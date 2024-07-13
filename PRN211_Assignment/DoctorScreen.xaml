@@ -31,7 +31,7 @@
     </Window.Resources>
     <Grid>
         <Label Content="Doctor Screen" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Foreground="#FF5B5B5B"/>
-        <DataGrid x:Name="dtg_appList" ItemsSource="{Binding}" Margin="59,57,369,160" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="dtg_appList" ItemsSource="{Binding}" Margin="59,102,369,115" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Note" Binding="{Binding Notes}"/>
@@ -78,6 +78,8 @@
         <Label Content="Note:" HorizontalAlignment="Left" Height="34" Margin="464,212,0,0" VerticalAlignment="Top" Width="92" RenderTransformOrigin="0.471,1.276"/>
         <TextBox x:Name="txtAppointmentId" HorizontalAlignment="Left" Height="23" Margin="508,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="116" Visibility="Collapsed"/>
         <Button x:Name="btn_MedicalRecordList" Content="Medical Record list" HorizontalAlignment="Left" Margin="365,345,0,0" VerticalAlignment="Top" Height="56" Width="172" Background="#FF006EC9" BorderBrush="White" Foreground="White" FontSize="16" Click="btn_MedicalRecordList_Click"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="66,51,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="179" Height="37"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="281,51,0,0" VerticalAlignment="Top" Height="37" Width="119" Click="Button_Click"/>
 
 
     </Grid>

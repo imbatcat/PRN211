@@ -14,7 +14,7 @@
         <Button x:Name="btn_CreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,152,0,0" Click="btn_CreateAccount_Click"/>
         <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="39" Width="90" Click="btnLogout_Click" Foreground="White" Background="#FF006EC9" BorderBrush="White"/>
         <Button x:Name="btn_ViewMedicalRecord" Content="View Medical Record" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="138" Margin="0,204,0,0" Click="btn_ViewMedicalRecord_Click" Background="#FF68D2DD"/>
-        <DataGrid x:Name="dtg_MedList" ItemsSource="{Binding}" Margin="257,51,171,166" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="dtg_MedList" ItemsSource="{Binding}" Margin="268,135,160,82" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Symptoms" Binding="{Binding Symptoms}"/>
@@ -38,6 +38,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="268,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" Height="33"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="504,43,0,0" VerticalAlignment="Top" Height="46" Width="170" Click="btnSearch_Click"/>
 
     </Grid>
 </Window>

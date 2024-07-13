@@ -30,7 +30,7 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <DataGrid x:Name="dtg_MedList" ItemsSource="{Binding}" Margin="59,57,369,160" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="dtg_MedList" ItemsSource="{Binding}" Margin="59,103,369,114" SelectionChanged="DataGrid_SelectionChanged" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Customer's name" Binding="{Binding CustomerName}"/>
                 <DataGridTextColumn Header="Symptoms" Binding="{Binding Symptoms}"/>
@@ -85,6 +85,8 @@
             </Button.RenderTransform>
         </Button>
         <TextBox x:Name="txtMedId" HorizontalAlignment="Left" Height="23" Margin="495,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="55" Visibility="Collapsed"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="59,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="186" Height="26"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="289,57,0,0" VerticalAlignment="Top" Height="26" Width="142" Click="btnSearch_Click"/>
 
     </Grid>
 </Window>

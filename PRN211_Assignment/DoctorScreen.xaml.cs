@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Repositories;
 using Repositories.Repos;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -12,6 +13,9 @@ namespace PRN211_Assignment
     /// </summary>
     public partial class DoctorScreen : Window, INotifyPropertyChanged
     {
+
+        private HospitalAppDbContext con = new HospitalAppDbContext();
+        
         private readonly AppointmentRepository _appointmentRepository;
         private readonly MedicalRecordRepository _medicalRecord;
         public Guid DoctorId;
@@ -30,7 +34,10 @@ namespace PRN211_Assignment
 
         public DoctorScreen(Guid doctorId)
         {
+
             InitializeComponent();
+            dtg_appList.ItemsSource = null;
+            dtg_appList.ItemsSource = con.Appointments.Where(x => x.CustomerName.ToLower().Contains(txtSearch.Text.ToLower()) && x.IsCheckedUp == true).ToList();
             DoctorId = doctorId;
             _appointmentRepository = new AppointmentRepository();
             _medicalRecord = new MedicalRecordRepository();
@@ -132,6 +139,19 @@ namespace PRN211_Assignment
             DoctorMedicalRecord doctorMedicalRecordWindow = new DoctorMedicalRecord(DoctorId);
             doctorMedicalRecordWindow.Show();
             Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtSearch == null)
+            {
+                LoadData();
+            }
+            else
+            {
+                dtg_appList.ItemsSource = null;
+                dtg_appList.ItemsSource = con.Appointments.Where(x => x.CustomerName.ToLower().Contains(txtSearch.Text.ToLower())&&x.IsCheckedUp==true).ToList();
+            }
         }
     }
 }

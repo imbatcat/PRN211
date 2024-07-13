@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Repositories;
 using Repositories.Interfaces;
 using Repositories.Repos;
 using System;
@@ -133,6 +134,13 @@ namespace PRN211_Assignment
             txtNote.Clear();
             txtName.Clear();
             txtMedId.Clear();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            HospitalAppDbContext con = new HospitalAppDbContext();
+            dtg_MedList.ItemsSource = null;
+            dtg_MedList.ItemsSource = con.MedicalRecords.Where(x => x.CustomerName.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
         }
     }
 }
